@@ -49,11 +49,11 @@ fun main(args: Array<String>) {
 
         var branchSocket = ServerSocket(port)
 
-        val portExport = "PORT " + port + "\r\n"
+        val portExport = "PORT: " + port + "\r\n"
         var portOut: BufferedWriter = BufferedWriter(OutputStreamWriter(listConn.outputStream))
         portOut.write(portExport, 0, portExport.length)
         portOut.flush()
-        System.out.println("Sent Port # to output.")
+        System.out.println("Sent Port # $port to output.")
 
         var branchConn = branchSocket.accept()
 
