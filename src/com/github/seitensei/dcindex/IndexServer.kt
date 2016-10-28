@@ -33,6 +33,8 @@ fun dirInit() {
 
 fun main(args: Array<String>) {
     dirInit()
+    var db = DataHandler
+    db.setup()
     var listSock = ServerSocket(9060)
     System.out.println("Listening on 9060")
     while(true) {

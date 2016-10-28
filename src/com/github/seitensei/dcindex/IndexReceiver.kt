@@ -25,7 +25,7 @@ class IndexReceiver(conn: Socket, command: String): Runnable {
             System.out.println("Let's META DATA")
             try {
                 var fileOutput: BufferedWriter = BufferedWriter(FileWriter(File("./tmp/" + sock.inetAddress.hostName)))
-                var inputString: String = "init"
+                var inputString: String = ""
 
                 while(!(inputString.equals("EOF\r\n"))) {
                     inputString = fileIn.readUTF()

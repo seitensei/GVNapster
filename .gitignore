@@ -5,6 +5,7 @@
 
 # Package Files #
 *.jar
+!sqlite-jdbc-3.14.2.1.jar
 *.war
 *.ear
 
@@ -12,8 +13,8 @@
 hs_err_pid*
 
 # generated folders
-data
-tmp
+/data/
+/tmp/
 
 # logging
 .log
@@ -61,3 +62,7 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+
+# tmp files
+/tmp/
+tmp.db
