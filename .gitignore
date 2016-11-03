@@ -14,7 +14,6 @@ hs_err_pid*
 
 # generated folders
 /data/
-/tmp/
 
 # logging
 .log
@@ -38,7 +37,7 @@ hs_err_pid*
 
 # Gradle:
 .idea/gradle.xml
-.idea/libraries
+#.idea/libraries
 
 # Mongo Explorer plugin:
 .idea/mongoSettings.xml
