@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/datacomm-index-server.iml" filepath="$PROJECT_DIR$/datacomm-index-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GVNapster.iml" filepath="$PROJECT_DIR$/GVNapster.iml" />
     </modules>
   </component>
 </project>
