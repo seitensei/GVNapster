@@ -12,11 +12,6 @@ object DataHandler {
     init {
         setup()
     }
-    // Table: Peers
-    // Contains Peer Hostname/IP/Connection Rate
-
-    // Table: Files
-    // Contains Filename, IP (FK), Descriptor
 
     fun setup() {
         System.out.println("Attempting DB Setup")
@@ -91,25 +86,28 @@ object DataHandler {
             }
         }
         stmt?.executeUpdate("CREATE TABLE peers ( peer_id INTEGER PRIMARY KEY, peer_name varchar(255) NOT NULL, peer_ip varchar(255) NOT NULL, peer_conn varchar(255) );")
-        stmt?.executeUpdate("CREATE TABLE files ( file_id INTEGER PRIMARY KEY, peer_id int NOT NULL,  file_name varchar(255) NOT NULL, file_desc varchar(255) NOT NULL, FOREIGN KEY(peer_id) REFERENCES peers(peer_id) );")
+        stmt?.executeUpdate("CREATE TABLE files ( file_id INTEGER PRIMARY KEY, peer_id int NOT NULL,  file_name varchar(255) NOT NULL, file_desc varchar(255) NOT NULL );")
         conn?.commit()
     }
 
     fun peerExists(peer_name: String, peer_ip: String): Boolean {
-        var sql_query: String = "SELECT peer_name, peer_ip FROM peers WHERE peer_name='${peer_name}' AND peer_ip='${peer_ip}';"
+        var sql_query: String = "SELECT peer_id, peer_name, peer_ip FROM peers WHERE peer_name='${peer_name}' AND peer_ip='${peer_ip}';"
         var rs: ResultSet? = stmt?.executeQuery(sql_query)
         try {
             rs?.getInt("peer_id")
         } catch (e: Exception) {
-
+            System.out.println(e)
+            System.out.println("${peer_name} does not exist")
             return false
         }
+        System.out.println("Peer Exists")
         return true
     }
 
     fun addPeer(peer_name: String, peer_ip: String, peer_conn: String): Boolean {
         if(!peerExists(peer_name, peer_ip)) {
             var sql_stmt = "INSERT INTO peers (peer_name, peer_ip, peer_conn) VALUES ('${peer_name}','${peer_ip}','${peer_conn}');"
+            System.out.println("adding ${peer_name}")
             stmt?.executeUpdate(sql_stmt)
             conn?.commit()
             return true
@@ -119,8 +117,21 @@ object DataHandler {
         }
     }
 
-    fun fileExists(peer_id: Integer, file_name: String): Boolean {
-        var sql_query: String = "SELECT peer_id, file_name FROM files WHERE peer_id='${peer_id}' AND file_name='${file_name}';"
+    fun delPeer(peer_name: String, peer_ip: String): Boolean {
+        if(peerExists(peer_name, peer_ip)) {
+            System.out.println("Peer ${peer_name} exists, deleting.")
+            var sql_stmt = "DELETE FROM peers WHERE peer_name = '${peer_name}' AND peer_ip = '${peer_ip}';"
+            stmt?.execute(sql_stmt)
+            conn?.commit()
+            return true
+        } else {
+            System.out.println("no ${peer_name}")
+            return false
+        }
+    }
+
+    fun fileExists(peer_id: Int, file_name: String): Boolean {
+        var sql_query: String = "SELECT file_id, peer_id, file_name FROM files WHERE peer_id='${peer_id}' AND file_name='${file_name}';"
         var rs: ResultSet? = stmt?.executeQuery(sql_query)
         try {
             rs?.getInt("file_id")
@@ -131,11 +142,23 @@ object DataHandler {
         return true
     }
 
-    fun addFile(peer_id: Integer, file_name: String, file_desc: String): Boolean{
+    fun addFile(peer_id: Int, file_name: String, file_desc: String): Boolean{
         if(!fileExists(peer_id, file_name)) {
             // file does not exist
             var sql_stmt = "INSERT INTO files (peer_id, file_name, file_desc) VALUES (${peer_id},'${file_name}','${file_desc}');"
             stmt?.executeUpdate(sql_stmt)
+            conn?.commit()
+            return true
+        } else {
+            return false
+        }
+    }
+
+    fun delFile(peer_id: Int, file_name: String): Boolean {
+        if(fileExists(peer_id, file_name)) {
+            System.out.println("File ${file_name} exists, deleting.")
+            var sql_stmt = "DELETE FROM files WHERE peer_id = ${peer_id} AND file_name = '${file_name}';"
+            stmt?.execute(sql_stmt)
             conn?.commit()
             return true
         } else {

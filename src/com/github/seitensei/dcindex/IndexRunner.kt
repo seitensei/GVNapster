@@ -5,7 +5,7 @@ import java.io.*;
 import java.util.*
 
 class IndexRunner(conn: Socket): Runnable {
-    var sock = conn;
+    var sock = conn
 
     override fun run() {
         try {
