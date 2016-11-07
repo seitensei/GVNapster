@@ -14,14 +14,16 @@ object DataHandler {
     }
 
     fun setup() {
+        Logger.log("Attempting to establish connection to database.")
         System.out.println("Attempting DB Setup")
 
         // verify driver
         try {
             Class.forName("org.sqlite.JDBC")
         } catch (e: Exception) {
-            System.out.println("SQLite driver is not installed.")
+            Logger.log("No SQLite Driver present.")
             System.err.println(e)
+            Logger.log("[ERROR] ${e}")
         }
 
         // create connection
@@ -37,9 +39,11 @@ object DataHandler {
             }
         }
         stmt?.close()
+        Logger.log("Database connection established.")
     }
 
     fun closeConnection() {
+        Logger.log("Attempting closure of database connection.")
         if(stmt != null) {
             try {
                 stmt?.close()
@@ -53,17 +57,20 @@ object DataHandler {
     }
 
     fun tableExists(table: String): Boolean {
+        Logger.log("Checking if $table exists in the database.")
         try {
             stmt?.executeQuery("SELECT 1 FROM $table LIMIT 1")
         } catch (e: Exception) {
             System.out.println("Table ${table} does not exist.")
             return false
         }
+        Logger.log("$table is found to exist.")
         return true
     }
 
     fun initTables() {
         // Drop the Tables when we Initialize them
+        Logger.log("Initializing database tables.")
         if(tableExists("files")) {
             try {
                 stmt?.executeUpdate("DROP TABLE IF EXISTS files")
@@ -88,19 +95,21 @@ object DataHandler {
         stmt?.executeUpdate("CREATE TABLE peers ( peer_id INTEGER PRIMARY KEY, peer_name varchar(255) NOT NULL, peer_ip varchar(255) NOT NULL, peer_conn varchar(255) );")
         stmt?.executeUpdate("CREATE TABLE files ( file_id INTEGER PRIMARY KEY, peer_id int NOT NULL,  file_name varchar(255) NOT NULL, file_desc varchar(255) NOT NULL );")
         conn?.commit()
+        Logger.log("Database initialization commited to disk.")
     }
 
     fun peerExists(peer_name: String, peer_ip: String): Boolean {
+        Logger.log("Checking for the existence of $peer_name on $peer_ip")
         var sql_query: String = "SELECT peer_id, peer_name, peer_ip FROM peers WHERE peer_name='${peer_name}' AND peer_ip='${peer_ip}';"
         var rs: ResultSet? = stmt?.executeQuery(sql_query)
         try {
             rs?.getInt("peer_id")
         } catch (e: Exception) {
             System.out.println(e)
-            System.out.println("${peer_name} does not exist")
+            Logger.log("$peer_name on $peer_ip was not located in the database.")
             return false
         }
-        System.out.println("Peer Exists")
+        Logger.log("$peer_name on $peer_ip was found in the database.")
         return true
     }
 

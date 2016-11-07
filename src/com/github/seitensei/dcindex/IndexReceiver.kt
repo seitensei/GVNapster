@@ -3,7 +3,7 @@ package com.github.seitensei.dcindex
 import java.io.*;
 import java.net.*;
 
-class IndexReceiver(conn: Socket, command: String): Runnable {
+class IndexReceiver(conn: Socket, command: String, status: Boolean): Runnable {
     var sock = conn
     var command = command
 
@@ -17,21 +17,23 @@ class IndexReceiver(conn: Socket, command: String): Runnable {
 
     fun proc() {
 
-        var fileOut: DataOutputStream = DataOutputStream(sock.outputStream)
-        var fileIn: DataInputStream = DataInputStream(sock.inputStream)
+        //var fileOut: DataOutputStream = DataOutputStream(sock.outputStream)
+        //var fileIn: DataInputStream = DataInputStream(sock.inputStream)
+        var fileIn: BufferedInputStream = BufferedInputStream(sock.inputStream)
 
         if(command.equals("META")) {
             // TODO: Upload Metadata from Client
-            System.out.println("Let's META DATA")
+            Logger.log("Starting Metadata Upload Process.")
+            System.out.println("META DATA UPLOAD START")
             try {
-                var fileOutput: BufferedWriter = BufferedWriter(FileWriter(File("./tmp/" + sock.inetAddress.hostName)))
-                var inputString: String = ""
-
-                while(!(inputString.equals("EOF\r\n"))) {
-                    inputString = fileIn.readUTF()
-                    fileOutput.write(inputString + "\r\n")
-                    fileOutput.flush()
-                }
+                //var fileOutput: BufferedWriter = BufferedWriter(FileWriter(File("./tmp/" + sock.inetAddress.hostName)))
+                var fileOutput = FileWriter(File("./tmp/" + sock.inetAddress.hostAddress))
+                // TODO: Make byte array big and work
+                var blob: ByteArray = ByteArray(655135)
+                var fileInput = fileIn.read(blob)
+                Logger.log("Waiting for read.")
+                fileOutput.write(fileInput)
+                fileOutput.flush()
                 fileOutput.close()
             } catch(e: Exception) {
                 System.out.println("Metadata Upload Failed")
