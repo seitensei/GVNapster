@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><meta>
+<files>
+    <file>
+        <name>ryan.txt</name>
+        <desc>The ryan korteway text file.</desc>
+    </file>
+    <file>
+        <name>tragic.txt</name>
+        <desc>This is a tragic story.</desc>
+    </file>
+</files>
+<connection><address>35.39.165.15</address><username>Ryan</username><speed>Ethernet</speed></connection></meta>
