@@ -34,42 +34,58 @@ fun dirInit() {
 }
 
 fun main(args: Array<String>) {
+    var command = ""
     Logger.log("Server initialization started.")
     dirInit()
     var db = DataHandler
     db.initTables()
     Logger.log("Initialization completed.")
-    var listSock = ServerSocket(9060)
-    Logger.log("Server listening on ${listSock.inetAddress.hostAddress}:${listSock.localPort}")
-    while(true) {
-        var listConn = listSock.accept();
-        Logger.log("Connection from ${listConn.inetAddress.hostName}:${listConn.port}.")
+    try {
+        command = args[0]
+    } catch(e: Exception) {
+        command = ""
+    }
 
-        // generating thread socket
-        Logger.log("Searching for available port.")
-        var port = -1
-        while(port == -1) {
-            port = randPort()
+    if(command.toLowerCase().equals("xml")) {
+        Logger.log("XML testing")
+        var xmlFile: File = File("./toServer.xml")
+        var xmlAgent: XMLHandler = XMLHandler(xmlFile)
+        xmlAgent.addToConn()
+        Logger.log("XML testing ended")
+    } else {
+        Logger.log("Normal Functionality")
+        var listSock = ServerSocket(9060)
+        Logger.log("Server listening on ${listSock.inetAddress.hostAddress}:${listSock.localPort}")
+        while (true) {
+            var listConn = listSock.accept();
+            Logger.log("Connection from ${listConn.inetAddress.hostName}:${listConn.port}.")
+
+            // generating thread socket
+            Logger.log("Searching for available port.")
+            var port = -1
+            while (port == -1) {
+                port = randPort()
+            }
+            Logger.log("Port available on ${port}. Establishing socket for listening.")
+            var branchSocket = ServerSocket(port)
+
+            val portExport = "PORT: " + port + "\r\n"
+            var portOut: BufferedWriter = BufferedWriter(OutputStreamWriter(listConn.outputStream))
+            portOut.write(portExport, 0, portExport.length)
+            portOut.flush()
+            Logger.log("${port} sent to client for usage.")
+
+            var branchConn = branchSocket.accept()
+            Logger.log("Connection from ${branchSocket.inetAddress.hostName}:${branchConn.port}.")
+            listConn.close()
+            Logger.log("Terminating client connection.")
+
+            // new thread
+            var branchRunner = IndexRunner(branchConn)
+            var branchThread = Thread(branchRunner)
+
+            branchThread.start()
+
         }
-        Logger.log("Port available on ${port}. Establishing socket for listening.")
-        var branchSocket = ServerSocket(port)
-
-        val portExport = "PORT: " + port + "\r\n"
-        var portOut: BufferedWriter = BufferedWriter(OutputStreamWriter(listConn.outputStream))
-        portOut.write(portExport, 0, portExport.length)
-        portOut.flush()
-        Logger.log("${port} sent to client for usage.")
-
-        var branchConn = branchSocket.accept()
-        Logger.log("Connection from ${branchSocket.inetAddress.hostName}:${branchConn.port}.")
-        listConn.close()
-        Logger.log("Terminating client connection.")
-
-        // new thread
-        var branchRunner = IndexRunner(branchConn)
-        var branchThread = Thread(branchRunner)
-
-        branchThread.start()
-
     }
 }

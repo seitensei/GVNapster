@@ -1,27 +1,16 @@
-[07-11-2016 10:44:03]: Server initialization started.
-[07-11-2016 10:44:03]: Attempting to establish connection to database.
-[07-11-2016 10:44:04]: Database connection established.
-[07-11-2016 10:44:04]: Initializing database tables.
-[07-11-2016 10:44:04]: Checking if files exists in the database.
-[07-11-2016 10:44:04]: files is found to exist.
-[07-11-2016 10:44:04]: Checking if peers exists in the database.
-[07-11-2016 10:44:04]: peers is found to exist.
-[07-11-2016 10:44:04]: Database initialization commited to disk.
-[07-11-2016 10:44:04]: Initialization completed.
-[07-11-2016 10:44:04]: Server listening on 0.0.0.0:9060
-[07-11-2016 10:45:09]: Connection from 35.40.131.26:51235.
-[07-11-2016 10:45:09]: Searching for available port.
-[07-11-2016 10:45:09]: Testing 60352.
-[07-11-2016 10:45:09]: Using 60352.
-[07-11-2016 10:45:09]: Port available on 60352. Establishing socket for listening.
-[07-11-2016 10:45:09]: 60352 sent to client for usage.
-[07-11-2016 10:45:09]: Connection from 0.0.0.0:51236.
-[07-11-2016 10:45:09]: Terminating client connection.
-[07-11-2016 10:45:09]: Sending connection readiness to client.
-[07-11-2016 10:45:09]: Received command META
-[07-11-2016 10:45:09]: Tokenized element: META
-[07-11-2016 10:45:09]: Received META command from client.
-[07-11-2016 10:45:09]: Transfer failed.
-[07-11-2016 10:45:09]: Starting Metadata Upload Process.
-[07-11-2016 10:45:09]: Sending connection readiness to client.
-[07-11-2016 10:45:09]: Waiting for read.
+[10-11-2016 11:50:05]: Server initialization started.
+[10-11-2016 11:50:05]: Attempting to establish connection to database.
+[10-11-2016 11:50:06]: Database connection established.
+[10-11-2016 11:50:06]: Initializing database tables.
+[10-11-2016 11:50:06]: Checking if files exists in the database.
+[10-11-2016 11:50:06]: files is found to exist.
+[10-11-2016 11:50:06]: Checking if peers exists in the database.
+[10-11-2016 11:50:06]: peers is found to exist.
+[10-11-2016 11:50:06]: Database initialization commited to disk.
+[10-11-2016 11:50:06]: Initialization completed.
+[10-11-2016 11:50:06]: XML testing
+[10-11-2016 11:50:06]: Parsed Connection as Ryan@35.39.165.15 with rate of Ethernet
+[10-11-2016 11:50:06]: Checking for the existence of Ryan on 35.39.165.15
+[10-11-2016 11:50:06]: Ryan on 35.39.165.15 was not located in the database.
+[10-11-2016 11:50:06]: Peer does not exist, adding.
+[10-11-2016 11:50:06]: XML testing ended

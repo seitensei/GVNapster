@@ -115,13 +115,17 @@ object DataHandler {
 
     fun addPeer(peer_name: String, peer_ip: String, peer_conn: String): Boolean {
         if(!peerExists(peer_name, peer_ip)) {
+            Logger.log("Peer does not exist, adding.")
             var sql_stmt = "INSERT INTO peers (peer_name, peer_ip, peer_conn) VALUES ('${peer_name}','${peer_ip}','${peer_conn}');"
             System.out.println("adding ${peer_name}")
             stmt?.executeUpdate(sql_stmt)
             conn?.commit()
             return true
         } else {
-            System.out.println("Peer already exists")
+            Logger.log("Peer Exists, Updating.")
+            var sql_stmt = "UPDATE peers SET peer_conn= '$peer_conn' WHERE peer_name='$peer_name' AND peer_ip='$peer_ip';"
+            stmt?.executeUpdate(sql_stmt)
+            conn?.commit()
             return false
         }
     }

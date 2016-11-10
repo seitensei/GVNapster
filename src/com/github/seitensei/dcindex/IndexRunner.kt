@@ -27,11 +27,11 @@ class IndexRunner(conn: Socket): Runnable {
             Logger.log("Received command $command")
             var tokenizer = StringTokenizer(command, " ")
             var parsed = tokenizer.nextToken()
-            Logger.log("Tokenized element: $parsed" )
+            Logger.log("Tokenized element: $parsed")
 
             if(parsed == "META") {
                 Logger.log("Received META command from client.")
-                // TODO: Prompt for and receive metadata
+                var fileLength: Int = Integer.parseInt(tokenizer.nextToken());
                 var status = false
                 var port = -1
                 while(port == -1) {
@@ -41,7 +41,7 @@ class IndexRunner(conn: Socket): Runnable {
                 writeToClient("PORT: " + port, outStream)
                 var recConn = recSock.accept()
 
-                var recRunner = IndexReceiver(recConn, command, status) // TODO: IndexReceiver command decoding?
+                var recRunner = IndexReceiver(recConn, command, status, fileLength) // TODO: IndexReceiver command decoding?
                 var recThread = Thread(recRunner)
 
                 recThread.start()
