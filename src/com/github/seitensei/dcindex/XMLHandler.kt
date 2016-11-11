@@ -66,8 +66,40 @@ class XMLHandler(file: File){
         }
     }
 
+    fun refreshFiles() {
+            try {
+                var dbFactory: DocumentBuilderFactory = DocumentBuilderFactory.newInstance()
+                var dBuilder: DocumentBuilder = dbFactory.newDocumentBuilder()
+                var doc: Document = dBuilder.parse(parseFile)
+
+                doc.documentElement.normalize()
+
+                var nodeList = doc.getElementsByTagName("connection")
+                var connNode = nodeList.item(0) as Element
+                var peerName = connNode.getElementsByTagName("username").item(0).textContent
+                var peerAddr = connNode.getElementsByTagName("address").item(0).textContent
+
+                DataHandler.dropFiles(peerName, peerAddr)
+                var nList: NodeList = doc.getElementsByTagName("file")
+                var i = 0;
+                while(i < nList.length) {
+                    var nNode: Node = nList.item(i)
+                    Logger.log("Current Element: " + nNode.nodeName)
+                    if(nNode.nodeType == Node.ELEMENT_NODE) {
+                        var eElement: Element = nNode as Element;
+                        Logger.log("Parsing file ${eElement.getElementsByTagName("name").item(0).textContent}.")
+                        var file_name: String = eElement.getElementsByTagName("name").item(0).textContent
+                        var file_desc: String = eElement.getElementsByTagName("desc").item(0).textContent
+                        DataHandler.insertFile(peerName, peerAddr, file_name, file_desc)
+                    }
+                    i++
+                }
 
 
-
+            } catch (e: Exception) {
+                Logger.log("--- Unable to Parse ---")
+                Logger.log(e.stackTrace.toString())
+            }
+    }
 
 }

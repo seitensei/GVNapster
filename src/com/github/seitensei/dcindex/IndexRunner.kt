@@ -31,7 +31,6 @@ class IndexRunner(conn: Socket): Runnable {
 
             if(parsed == "META") {
                 Logger.log("Received META command from client.")
-                var fileLength: Int = Integer.parseInt(tokenizer.nextToken());
                 var status = false
                 var port = -1
                 while(port == -1) {
@@ -39,26 +38,40 @@ class IndexRunner(conn: Socket): Runnable {
                 }
                 var recSock = ServerSocket(port)
                 writeToClient("PORT: " + port, outStream)
+                Logger.log("Accepting Connection on $port")
                 var recConn = recSock.accept()
 
-                var recRunner = IndexReceiver(recConn, command, status, fileLength) // TODO: IndexReceiver command decoding?
+                var recRunner = IndexReceiver(recConn, parsed, status) // TODO: IndexReceiver command decoding?
                 var recThread = Thread(recRunner)
 
-                recThread.start()
-
+                recThread.run()
+                status = recRunner.runStatus()
                 if(status) {
-                    Logger.log("Transfer completed successfully")
+                    Logger.log("status returned true")
                 } else {
-                    Logger.log("Transfer failed.")
+                    Logger.log("status returned false")
                 }
 
 
             }
             if(parsed == "SEARCH") {
+                var term: String = tokenizer.nextToken();
+                Logger.log("Search Term: $term")
+                // TODO: BufferedWriter
+                // Delimited as Link Speed, Host IP, FileName
+                var searchList = DataHandler.dbDump()
+                var resultsList = ArrayList<String>()
+                for(term in searchList) {
+                    Logger.log("$term")
+                }
 
             }
             if(parsed == "QUIT") {
-                // TODO: Delete Client from Data
+                var user = tokenizer.nextToken()
+                var userip = tokenizer.nextToken()
+                Logger.log("$user@$userip has quit.")
+                DataHandler.dropFiles(user, userip)
+                DataHandler.delPeer(user, userip)
                 break
 
             }

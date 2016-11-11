@@ -3,40 +3,41 @@ package com.github.seitensei.dcindex
 import java.io.*;
 import java.net.*;
 
-class IndexReceiver(conn: Socket, command: String, status: Boolean, fileLength: Int): Runnable {
-    var sock = conn
-    var command = command
-    var fileLength = fileLength
+class IndexReceiver(var sock: Socket, var command: String, @Volatile var status: Boolean): Runnable {
 
     override fun run() {
         try {
+            Logger.log("Initiating Metadata Upload Proc")
             proc()
         } catch (e: Exception) {
+            Logger.log(e.stackTrace.toString())
             throw e
         }
     }
 
     fun proc() {
-
-        //var fileOut: DataOutputStream = DataOutputStream(sock.outputStream)
-        //var fileIn: DataInputStream = DataInputStream(sock.inputStream)
-        var fileIn: BufferedInputStream = BufferedInputStream(sock.inputStream)
-
+        val fileIn: BufferedReader = BufferedReader(InputStreamReader(sock.inputStream))
+        Logger.log("Command was $command")
         if(command.equals("META")) {
             // TODO: Upload Metadata from Client
             Logger.log("--- Starting Metadata Upload Process ---")
             System.out.println("META DATA UPLOAD START")
             try {
-                //var fileOutput: BufferedWriter = BufferedWriter(FileWriter(File("./tmp/" + sock.inetAddress.hostName)))
-                var fileOutput = FileWriter(File("./tmp/" + sock.inetAddress.hostAddress))
-                // TODO: Make byte array big and work
-                var blob: ByteArray = ByteArray(fileLength)
-                Logger.log("Waiting for read.")
-                var fileInput = fileIn.read(blob, 0, fileLength)
-
+                var fileOutput: BufferedWriter = BufferedWriter(FileWriter(File("./tmp/" + sock.inetAddress.hostName)))
+                //var fileOutput = FileWriter(File("./tmp/" + sock.inetAddress.hostAddress))
+                var readFile: String
                 Logger.log("writing to file.")
-                fileOutput.write(fileInput)
-                fileOutput.flush()
+                while(true) {
+                    readFile = fileIn.readLine()
+                    if(!readFile.contains("EOF")) {
+                        Logger.log("Writing Line: $readFile")
+                        fileOutput.write(readFile)
+                        fileOutput.write("\r\n")
+                        fileOutput.flush()
+                    } else {
+                        break
+                    }
+                }
                 fileOutput.close()
                 Logger.log("File Write Ended.")
 
@@ -45,9 +46,12 @@ class IndexReceiver(conn: Socket, command: String, status: Boolean, fileLength: 
                 var xmlAgent = XMLHandler(File("./tmp/" + sock.inetAddress.hostAddress))
                 Logger.log("Add Connection to Database")
                 xmlAgent.addToConn()
-
+                Logger.log("Update File Index")
+                xmlAgent.refreshFiles()
+                status = true
             } catch(e: Exception) {
                 System.out.println("Metadata Upload and Update Failed")
+                status = false
                 throw e
             }
 
@@ -55,5 +59,9 @@ class IndexReceiver(conn: Socket, command: String, status: Boolean, fileLength: 
 
         sock.close()
 
+    }
+
+    fun runStatus(): Boolean {
+        return status
     }
 }

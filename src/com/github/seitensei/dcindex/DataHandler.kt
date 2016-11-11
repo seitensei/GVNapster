@@ -1,6 +1,7 @@
 package com.github.seitensei.dcindex
 
 import java.sql.*
+import java.util.*
 
 /**
  * Database Access Class
@@ -167,6 +168,38 @@ object DataHandler {
         }
     }
 
+    fun insertFile(peer_name: String, peer_ip: String, file_name: String, file_desc: String): Boolean{
+        var peer_stmt = "SELECT peer_id FROM peers WHERE peer_name = '$peer_name' AND peer_ip = '$peer_ip';"
+        var peer_set: ResultSet? = stmt?.executeQuery(peer_stmt)
+        var peer_id: Int? = 0;
+        try {
+            peer_id = peer_set?.getInt("peer_id")
+            addFile(peer_id as Int, file_name, file_desc)
+            return true
+        } catch (e: Exception) {
+            Logger.log("Unable to add file belonging to $peer_name@$peer_ip.")
+            return false
+        }
+
+    }
+
+    fun dbDump(): ArrayList<String> {
+        try {
+            var peer_stmt = "SELECT peers.peer_name, peers.peer_ip, files.file_name, " +
+                    "files.file_desc FROM peers INNER JOIN files ON peers.peer_id=files.peer_id;"
+            var results: ResultSet? = stmt?.executeQuery(peer_stmt)
+            var list: ArrayList<String> = ArrayList<String>()
+            while(results?.next() as Boolean) {
+                list.add(results?.getString(1) as String)
+            }
+            return list
+        } catch (e: Exception) {
+            Logger.log("Unable to get data list.")
+            Logger.log(e.stackTrace.toString())
+        }
+        return ArrayList<String>()
+    }
+
     fun delFile(peer_id: Int, file_name: String): Boolean {
         if(fileExists(peer_id, file_name)) {
             System.out.println("File ${file_name} exists, deleting.")
@@ -178,6 +211,25 @@ object DataHandler {
             return false
         }
     }
+
+    fun dropFiles(peer_name: String, peer_ip: String): Boolean {
+        var peer_stmt = "SELECT peer_id FROM peers WHERE peer_name = '$peer_name' AND peer_ip = '$peer_ip';"
+        var file_stmt = "";
+        var peer_set: ResultSet? = stmt?.executeQuery(peer_stmt)
+        var peer_id: Int? = 0;
+        try {
+            peer_id = peer_set?.getInt("peer_id")
+            file_stmt = "DELETE FROM files WHERE peer_id = $peer_id;"
+            stmt?.execute(file_stmt)
+            return true
+        } catch (e: Exception) {
+            Logger.log("Unable to drop files belonging to $peer_name@$peer_ip.")
+            return false
+        }
+
+    }
+
+
 
 
 

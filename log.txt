@@ -1,16 +1,62 @@
-[10-11-2016 11:50:05]: Server initialization started.
-[10-11-2016 11:50:05]: Attempting to establish connection to database.
-[10-11-2016 11:50:06]: Database connection established.
-[10-11-2016 11:50:06]: Initializing database tables.
-[10-11-2016 11:50:06]: Checking if files exists in the database.
-[10-11-2016 11:50:06]: files is found to exist.
-[10-11-2016 11:50:06]: Checking if peers exists in the database.
-[10-11-2016 11:50:06]: peers is found to exist.
-[10-11-2016 11:50:06]: Database initialization commited to disk.
-[10-11-2016 11:50:06]: Initialization completed.
-[10-11-2016 11:50:06]: XML testing
-[10-11-2016 11:50:06]: Parsed Connection as Ryan@35.39.165.15 with rate of Ethernet
-[10-11-2016 11:50:06]: Checking for the existence of Ryan on 35.39.165.15
-[10-11-2016 11:50:06]: Ryan on 35.39.165.15 was not located in the database.
-[10-11-2016 11:50:06]: Peer does not exist, adding.
-[10-11-2016 11:50:06]: XML testing ended
+[11-11-2016 10:53:30]: Server initialization started.
+[11-11-2016 10:53:30]: Attempting to establish connection to database.
+[11-11-2016 10:53:31]: Database connection established.
+[11-11-2016 10:53:31]: Initializing database tables.
+[11-11-2016 10:53:31]: Checking if files exists in the database.
+[11-11-2016 10:53:31]: files is found to exist.
+[11-11-2016 10:53:31]: Checking if peers exists in the database.
+[11-11-2016 10:53:31]: peers is found to exist.
+[11-11-2016 10:53:31]: Database initialization commited to disk.
+[11-11-2016 10:53:31]: Initialization completed.
+[11-11-2016 10:53:31]: Normal Functionality
+[11-11-2016 10:53:31]: Server listening on 0.0.0.0:9060
+[11-11-2016 10:54:05]: Connection from 35.40.131.29:49784.
+[11-11-2016 10:54:05]: Searching for available port.
+[11-11-2016 10:54:05]: Testing 58896.
+[11-11-2016 10:54:05]: Using 58896.
+[11-11-2016 10:54:05]: Port available on 58896. Establishing socket for listening.
+[11-11-2016 10:54:05]: 58896 sent to client for usage.
+[11-11-2016 10:54:06]: Connection from 0.0.0.0:49785.
+[11-11-2016 10:54:06]: Terminating client connection.
+[11-11-2016 10:54:06]: Sending connection readiness to client.
+[11-11-2016 10:54:06]: Received command META
+[11-11-2016 10:54:06]: Tokenized element: META
+[11-11-2016 10:54:06]: Received META command from client.
+[11-11-2016 10:54:06]: Accepting Connection on 46450
+[11-11-2016 10:54:06]: Initiating Metadata Upload Proc
+[11-11-2016 10:54:06]: Command was META
+[11-11-2016 10:54:06]: --- Starting Metadata Upload Process ---
+[11-11-2016 10:54:06]: writing to file.
+[11-11-2016 10:54:06]: Writing Line: <?xml version="1.0" encoding="UTF-8" standalone="no"?><meta>
+[11-11-2016 10:54:06]: Writing Line: <files>
+[11-11-2016 10:54:06]: Writing Line:     <file>
+[11-11-2016 10:54:06]: Writing Line:         <name>ryan.txt</name>
+[11-11-2016 10:54:06]: Writing Line:         <desc>The ryan korteway text file.</desc>
+[11-11-2016 10:54:06]: Writing Line:     </file>
+[11-11-2016 10:54:06]: Writing Line:     <file>
+[11-11-2016 10:54:06]: Writing Line:         <name>Bing.txt</name>
+[11-11-2016 10:54:06]: Writing Line:         <desc>The random noises text file.</desc>
+[11-11-2016 10:54:06]: Writing Line:     </file>
+[11-11-2016 10:54:06]: Writing Line: </files>
+[11-11-2016 10:54:06]: Writing Line: <connection><address>35.40.131.29</address><username>Ryan</username><speed>Wi-Fi</speed></connection></meta>
+[11-11-2016 10:54:06]: File Write Ended.
+[11-11-2016 10:54:06]: Feeding ./tmp/35.40.131.29 into parser.
+[11-11-2016 10:54:06]: Add Connection to Database
+[11-11-2016 10:54:06]: Parsed Connection as Ryan@35.40.131.29 with rate of Wi-Fi
+[11-11-2016 10:54:06]: Checking for the existence of Ryan on 35.40.131.29
+[11-11-2016 10:54:06]: Ryan on 35.40.131.29 was not located in the database.
+[11-11-2016 10:54:06]: Peer does not exist, adding.
+[11-11-2016 10:54:06]: Update File Index
+[11-11-2016 10:54:06]: Current Element: file
+[11-11-2016 10:54:06]: Parsing file ryan.txt.
+[11-11-2016 10:54:06]: Current Element: file
+[11-11-2016 10:54:06]: Parsing file Bing.txt.
+[11-11-2016 10:54:06]: status returned true
+[11-11-2016 10:54:06]: Sending connection readiness to client.
+[11-11-2016 10:54:16]: Received command SEARCH bing 
+[11-11-2016 10:54:16]: Tokenized element: SEARCH
+[11-11-2016 10:54:16]: Search Term: bing
+[11-11-2016 10:54:16]: Ryan
+[11-11-2016 10:54:16]: Ryan
+[11-11-2016 10:54:16]: Sending connection readiness to client.
+[11-11-2016 10:56:17]: Received command null
