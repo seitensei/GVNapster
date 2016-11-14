@@ -55,14 +55,30 @@ class IndexRunner(conn: Socket): Runnable {
 
             }
             if(parsed == "SEARCH") {
-                var term: String = tokenizer.nextToken();
-                Logger.log("Search Term: $term")
+                var sterm: String = tokenizer.nextToken();
+                Logger.log("Search Term: $sterm")
                 // TODO: BufferedWriter
                 // Delimited as Link Speed, Host IP, FileName
                 var searchList = DataHandler.dbDump()
-                var resultsList = ArrayList<String>()
-                for(term in searchList) {
-                    Logger.log("$term")
+                var resultsList = ArrayList<ResultEntity>()
+                if(searchList.isEmpty()) {
+                    writeToClient("0", outStream)
+                } else {
+                    for (term in searchList) {
+                        Logger.log("${term.file_name} on ${term.peer_ip} with ${term.file_desc}")
+                        if(term.file_desc.contains(sterm)) {
+                            // dump to results list
+                            Logger.log("Match found for $sterm, adding to list")
+                            resultsList.add(term)
+                        }
+                    }
+                    // out
+                    writeToClient("${resultsList.size}", outStream)
+                    for (term in resultsList) {
+                        Logger.log("Sending: ${term.peer_conn},${term.peer_ip},${term.file_name}")
+                        var message: String = "${term.peer_conn},${term.peer_ip},${term.file_name}"
+                        writeToClient(message, outStream)
+                    }
                 }
 
             }
@@ -85,7 +101,7 @@ class IndexRunner(conn: Socket): Runnable {
     }
 
     fun writeToClient(res: String, os: BufferedWriter) {
-        var text = res + "\n\r" // CRLF
+        var text = res + "\r\n" // CRLF
         os.write(text, 0, text.length)
         os.flush()
     }

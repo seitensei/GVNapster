@@ -1,62 +1,761 @@
-[11-11-2016 10:53:30]: Server initialization started.
-[11-11-2016 10:53:30]: Attempting to establish connection to database.
-[11-11-2016 10:53:31]: Database connection established.
-[11-11-2016 10:53:31]: Initializing database tables.
-[11-11-2016 10:53:31]: Checking if files exists in the database.
-[11-11-2016 10:53:31]: files is found to exist.
-[11-11-2016 10:53:31]: Checking if peers exists in the database.
-[11-11-2016 10:53:31]: peers is found to exist.
-[11-11-2016 10:53:31]: Database initialization commited to disk.
-[11-11-2016 10:53:31]: Initialization completed.
-[11-11-2016 10:53:31]: Normal Functionality
-[11-11-2016 10:53:31]: Server listening on 0.0.0.0:9060
-[11-11-2016 10:54:05]: Connection from 35.40.131.29:49784.
-[11-11-2016 10:54:05]: Searching for available port.
-[11-11-2016 10:54:05]: Testing 58896.
-[11-11-2016 10:54:05]: Using 58896.
-[11-11-2016 10:54:05]: Port available on 58896. Establishing socket for listening.
-[11-11-2016 10:54:05]: 58896 sent to client for usage.
-[11-11-2016 10:54:06]: Connection from 0.0.0.0:49785.
-[11-11-2016 10:54:06]: Terminating client connection.
-[11-11-2016 10:54:06]: Sending connection readiness to client.
-[11-11-2016 10:54:06]: Received command META
-[11-11-2016 10:54:06]: Tokenized element: META
-[11-11-2016 10:54:06]: Received META command from client.
-[11-11-2016 10:54:06]: Accepting Connection on 46450
-[11-11-2016 10:54:06]: Initiating Metadata Upload Proc
-[11-11-2016 10:54:06]: Command was META
-[11-11-2016 10:54:06]: --- Starting Metadata Upload Process ---
-[11-11-2016 10:54:06]: writing to file.
-[11-11-2016 10:54:06]: Writing Line: <?xml version="1.0" encoding="UTF-8" standalone="no"?><meta>
-[11-11-2016 10:54:06]: Writing Line: <files>
-[11-11-2016 10:54:06]: Writing Line:     <file>
-[11-11-2016 10:54:06]: Writing Line:         <name>ryan.txt</name>
-[11-11-2016 10:54:06]: Writing Line:         <desc>The ryan korteway text file.</desc>
-[11-11-2016 10:54:06]: Writing Line:     </file>
-[11-11-2016 10:54:06]: Writing Line:     <file>
-[11-11-2016 10:54:06]: Writing Line:         <name>Bing.txt</name>
-[11-11-2016 10:54:06]: Writing Line:         <desc>The random noises text file.</desc>
-[11-11-2016 10:54:06]: Writing Line:     </file>
-[11-11-2016 10:54:06]: Writing Line: </files>
-[11-11-2016 10:54:06]: Writing Line: <connection><address>35.40.131.29</address><username>Ryan</username><speed>Wi-Fi</speed></connection></meta>
-[11-11-2016 10:54:06]: File Write Ended.
-[11-11-2016 10:54:06]: Feeding ./tmp/35.40.131.29 into parser.
-[11-11-2016 10:54:06]: Add Connection to Database
-[11-11-2016 10:54:06]: Parsed Connection as Ryan@35.40.131.29 with rate of Wi-Fi
-[11-11-2016 10:54:06]: Checking for the existence of Ryan on 35.40.131.29
-[11-11-2016 10:54:06]: Ryan on 35.40.131.29 was not located in the database.
-[11-11-2016 10:54:06]: Peer does not exist, adding.
-[11-11-2016 10:54:06]: Update File Index
-[11-11-2016 10:54:06]: Current Element: file
-[11-11-2016 10:54:06]: Parsing file ryan.txt.
-[11-11-2016 10:54:06]: Current Element: file
-[11-11-2016 10:54:06]: Parsing file Bing.txt.
-[11-11-2016 10:54:06]: status returned true
-[11-11-2016 10:54:06]: Sending connection readiness to client.
-[11-11-2016 10:54:16]: Received command SEARCH bing 
-[11-11-2016 10:54:16]: Tokenized element: SEARCH
-[11-11-2016 10:54:16]: Search Term: bing
-[11-11-2016 10:54:16]: Ryan
-[11-11-2016 10:54:16]: Ryan
-[11-11-2016 10:54:16]: Sending connection readiness to client.
-[11-11-2016 10:56:17]: Received command null
+[14-11-2016 09:46:04]: Server initialization started.
+[14-11-2016 09:46:04]: Attempting to establish connection to database.
+[14-11-2016 09:46:05]: Database connection established.
+[14-11-2016 09:46:05]: Initializing database tables.
+[14-11-2016 09:46:05]: Checking if files exists in the database.
+[14-11-2016 09:46:05]: files is found to exist.
+[14-11-2016 09:46:05]: Checking if peers exists in the database.
+[14-11-2016 09:46:05]: peers is found to exist.
+[14-11-2016 09:46:05]: Database initialization commited to disk.
+[14-11-2016 09:46:05]: Initialization completed.
+[14-11-2016 09:46:05]: Normal Functionality
+[14-11-2016 09:46:05]: Server listening on 0.0.0.0:9060
+[14-11-2016 09:46:09]: Connection from 35.40.131.219:56658.
+[14-11-2016 09:46:09]: Searching for available port.
+[14-11-2016 09:46:09]: Testing 39869.
+[14-11-2016 09:46:09]: Using 39869.
+[14-11-2016 09:46:09]: Port available on 39869. Establishing socket for listening.
+[14-11-2016 09:46:09]: 39869 sent to client for usage.
+[14-11-2016 09:46:09]: Connection from 0.0.0.0:56659.
+[14-11-2016 09:46:09]: Terminating client connection.
+[14-11-2016 09:46:09]: Sending connection readiness to client.
+[14-11-2016 09:46:09]: Received command META
+[14-11-2016 09:46:09]: Tokenized element: META
+[14-11-2016 09:46:09]: Received META command from client.
+[14-11-2016 09:46:09]: Accepting Connection on 35498
+[14-11-2016 09:46:09]: Initiating Metadata Upload Proc
+[14-11-2016 09:46:09]: Command was META
+[14-11-2016 09:46:09]: --- Starting Metadata Upload Process ---
+[14-11-2016 09:46:09]: writing to file.
+[14-11-2016 09:46:09]: Writing Line: <?xml version="1.0" encoding="UTF-8" standalone="no"?><meta>
+[14-11-2016 09:46:09]: Writing Line: <files>
+[14-11-2016 09:46:09]: Writing Line:     <file>
+[14-11-2016 09:46:09]: Writing Line:         <name>ryan.txt</name>
+[14-11-2016 09:46:09]: Writing Line:         <desc>The ryan korteway text file.</desc>
+[14-11-2016 09:46:09]: Writing Line:     </file>
+[14-11-2016 09:46:09]: Writing Line:     <file>
+[14-11-2016 09:46:09]: Writing Line:         <name>Bing.txt</name>
+[14-11-2016 09:46:09]: Writing Line:         <desc>The random noises text file.</desc>
+[14-11-2016 09:46:09]: Writing Line:     </file>
+[14-11-2016 09:46:09]: Writing Line: </files>
+[14-11-2016 09:46:09]: Writing Line: <connection><address>35.40.131.219</address><username>Ryan</username><speed>Wi-Fi</speed></connection></meta>
+[14-11-2016 09:46:09]: File Write Ended.
+[14-11-2016 09:46:09]: Feeding ./tmp/35.40.131.219 into parser.
+[14-11-2016 09:46:09]: Add Connection to Database
+[14-11-2016 09:46:09]: Parsed Connection as Ryan@35.40.131.219 with rate of Wi-Fi
+[14-11-2016 09:46:09]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 09:46:09]: Ryan on 35.40.131.219 was not located in the database.
+[14-11-2016 09:46:09]: Peer does not exist, adding.
+[14-11-2016 09:46:09]: Update File Index
+[14-11-2016 09:46:09]: Current Element: file
+[14-11-2016 09:46:09]: Parsing file ryan.txt.
+[14-11-2016 09:46:09]: Current Element: file
+[14-11-2016 09:46:09]: Parsing file Bing.txt.
+[14-11-2016 09:46:09]: status returned true
+[14-11-2016 09:46:09]: Sending connection readiness to client.
+[14-11-2016 09:46:15]: Received command SEARCH text 
+[14-11-2016 09:46:15]: Tokenized element: SEARCH
+[14-11-2016 09:46:15]: Search Term: text
+[14-11-2016 09:46:15]: ryan.txt on 35.40.131.219 with The ryan korteway text file.
+[14-11-2016 09:46:15]: Match found for text, adding to list
+[14-11-2016 09:46:15]: Bing.txt on 35.40.131.219 with The random noises text file.
+[14-11-2016 09:46:15]: Match found for text, adding to list
+[14-11-2016 09:46:15]: Sending: Wi-Fi,35.40.131.219,ryan.txt
+[14-11-2016 09:46:15]: Sending: Wi-Fi,35.40.131.219,Bing.txt
+[14-11-2016 09:46:15]: Sending connection readiness to client.
+[14-11-2016 09:47:06]: Received command QUIT Ryan 35.40.131.219 
+[14-11-2016 09:47:06]: Tokenized element: QUIT
+[14-11-2016 09:47:06]: Ryan@35.40.131.219 has quit.
+[14-11-2016 09:47:06]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 09:47:06]: Ryan on 35.40.131.219 was found in the database.
+[14-11-2016 09:47:44]: Connection from 35.40.131.219:56664.
+[14-11-2016 09:47:44]: Searching for available port.
+[14-11-2016 09:47:44]: Testing 48215.
+[14-11-2016 09:47:44]: Using 48215.
+[14-11-2016 09:47:44]: Port available on 48215. Establishing socket for listening.
+[14-11-2016 09:47:44]: 48215 sent to client for usage.
+[14-11-2016 09:47:44]: Connection from 0.0.0.0:56665.
+[14-11-2016 09:47:44]: Terminating client connection.
+[14-11-2016 09:47:44]: Sending connection readiness to client.
+[14-11-2016 09:47:45]: Received command META
+[14-11-2016 09:47:45]: Tokenized element: META
+[14-11-2016 09:47:45]: Received META command from client.
+[14-11-2016 09:47:45]: Accepting Connection on 43031
+[14-11-2016 09:47:45]: Initiating Metadata Upload Proc
+[14-11-2016 09:47:45]: Command was META
+[14-11-2016 09:47:45]: --- Starting Metadata Upload Process ---
+[14-11-2016 09:47:45]: writing to file.
+[14-11-2016 09:47:45]: Writing Line: <?xml version="1.0" encoding="UTF-8" standalone="no"?><meta>
+[14-11-2016 09:47:45]: Writing Line: <files>
+[14-11-2016 09:47:45]: Writing Line:     <file>
+[14-11-2016 09:47:45]: Writing Line:         <name>ryan.txt</name>
+[14-11-2016 09:47:45]: Writing Line:         <desc>The ryan korteway text file.</desc>
+[14-11-2016 09:47:45]: Writing Line:     </file>
+[14-11-2016 09:47:45]: Writing Line:     <file>
+[14-11-2016 09:47:45]: Writing Line:         <name>Bing.txt</name>
+[14-11-2016 09:47:45]: Writing Line:         <desc>The random noises text file.</desc>
+[14-11-2016 09:47:45]: Writing Line:     </file>
+[14-11-2016 09:47:45]: Writing Line: </files>
+[14-11-2016 09:47:45]: Writing Line: <connection><address>35.40.131.219</address><username>Ryan</username><speed>Wi-Fi</speed></connection></meta>
+[14-11-2016 09:47:45]: File Write Ended.
+[14-11-2016 09:47:45]: Feeding ./tmp/35.40.131.219 into parser.
+[14-11-2016 09:47:45]: Add Connection to Database
+[14-11-2016 09:47:45]: Parsed Connection as Ryan@35.40.131.219 with rate of Wi-Fi
+[14-11-2016 09:47:45]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 09:47:45]: Ryan on 35.40.131.219 was not located in the database.
+[14-11-2016 09:47:45]: Peer does not exist, adding.
+[14-11-2016 09:47:45]: Update File Index
+[14-11-2016 09:47:45]: Current Element: file
+[14-11-2016 09:47:45]: Parsing file ryan.txt.
+[14-11-2016 09:47:45]: Current Element: file
+[14-11-2016 09:47:45]: Parsing file Bing.txt.
+[14-11-2016 09:47:45]: status returned true
+[14-11-2016 09:47:45]: Sending connection readiness to client.
+[14-11-2016 09:47:51]: Received command SEARCH text 
+[14-11-2016 09:47:51]: Tokenized element: SEARCH
+[14-11-2016 09:47:51]: Search Term: text
+[14-11-2016 09:47:51]: ryan.txt on 35.40.131.219 with The ryan korteway text file.
+[14-11-2016 09:47:51]: Match found for text, adding to list
+[14-11-2016 09:47:51]: Bing.txt on 35.40.131.219 with The random noises text file.
+[14-11-2016 09:47:51]: Match found for text, adding to list
+[14-11-2016 09:47:51]: Sending: Wi-Fi,35.40.131.219,ryan.txt
+[14-11-2016 09:47:51]: Sending: Wi-Fi,35.40.131.219,Bing.txt
+[14-11-2016 09:47:51]: Sending connection readiness to client.
+[14-11-2016 09:48:25]: Received command QUIT Ryan 35.40.131.219 
+[14-11-2016 09:48:25]: Tokenized element: QUIT
+[14-11-2016 09:48:25]: Ryan@35.40.131.219 has quit.
+[14-11-2016 09:48:25]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 09:48:25]: Ryan on 35.40.131.219 was found in the database.
+[14-11-2016 09:50:03]: Connection from 35.40.131.219:56668.
+[14-11-2016 09:50:03]: Searching for available port.
+[14-11-2016 09:50:03]: Testing 39338.
+[14-11-2016 09:50:03]: Using 39338.
+[14-11-2016 09:50:03]: Port available on 39338. Establishing socket for listening.
+[14-11-2016 09:50:03]: 39338 sent to client for usage.
+[14-11-2016 09:50:03]: Connection from 0.0.0.0:56669.
+[14-11-2016 09:50:03]: Terminating client connection.
+[14-11-2016 09:50:03]: Sending connection readiness to client.
+[14-11-2016 09:50:03]: Received command META
+[14-11-2016 09:50:03]: Tokenized element: META
+[14-11-2016 09:50:03]: Received META command from client.
+[14-11-2016 09:50:03]: Accepting Connection on 58664
+[14-11-2016 09:50:03]: Initiating Metadata Upload Proc
+[14-11-2016 09:50:03]: Command was META
+[14-11-2016 09:50:03]: --- Starting Metadata Upload Process ---
+[14-11-2016 09:50:03]: writing to file.
+[14-11-2016 09:50:03]: Writing Line: <?xml version="1.0" encoding="UTF-8" standalone="no"?><meta>
+[14-11-2016 09:50:03]: Writing Line: <files>
+[14-11-2016 09:50:03]: Writing Line:     <file>
+[14-11-2016 09:50:03]: Writing Line:         <name>ryan.txt</name>
+[14-11-2016 09:50:03]: Writing Line:         <desc>The ryan korteway text file.</desc>
+[14-11-2016 09:50:03]: Writing Line:     </file>
+[14-11-2016 09:50:03]: Writing Line:     <file>
+[14-11-2016 09:50:03]: Writing Line:         <name>Bing.txt</name>
+[14-11-2016 09:50:03]: Writing Line:         <desc>The random noises text file.</desc>
+[14-11-2016 09:50:03]: Writing Line:     </file>
+[14-11-2016 09:50:03]: Writing Line: </files>
+[14-11-2016 09:50:03]: Writing Line: <connection><address>35.40.131.219</address><username>Ryan</username><speed>Wi-Fi</speed></connection></meta>
+[14-11-2016 09:50:03]: File Write Ended.
+[14-11-2016 09:50:03]: Feeding ./tmp/35.40.131.219 into parser.
+[14-11-2016 09:50:03]: Add Connection to Database
+[14-11-2016 09:50:03]: Parsed Connection as Ryan@35.40.131.219 with rate of Wi-Fi
+[14-11-2016 09:50:03]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 09:50:03]: Ryan on 35.40.131.219 was not located in the database.
+[14-11-2016 09:50:03]: Peer does not exist, adding.
+[14-11-2016 09:50:03]: Update File Index
+[14-11-2016 09:50:03]: Current Element: file
+[14-11-2016 09:50:03]: Parsing file ryan.txt.
+[14-11-2016 09:50:03]: Current Element: file
+[14-11-2016 09:50:03]: Parsing file Bing.txt.
+[14-11-2016 09:50:03]: status returned true
+[14-11-2016 09:50:03]: Sending connection readiness to client.
+[14-11-2016 09:50:16]: Received command SEARCH text 
+[14-11-2016 09:50:16]: Tokenized element: SEARCH
+[14-11-2016 09:50:16]: Search Term: text
+[14-11-2016 09:50:16]: ryan.txt on 35.40.131.219 with The ryan korteway text file.
+[14-11-2016 09:50:16]: Match found for text, adding to list
+[14-11-2016 09:50:16]: Bing.txt on 35.40.131.219 with The random noises text file.
+[14-11-2016 09:50:16]: Match found for text, adding to list
+[14-11-2016 09:50:16]: Sending: Wi-Fi,35.40.131.219,ryan.txt
+[14-11-2016 09:50:16]: Sending: Wi-Fi,35.40.131.219,Bing.txt
+[14-11-2016 09:50:16]: Sending connection readiness to client.
+[14-11-2016 09:52:10]: Received command QUIT Ryan 35.40.131.219 
+[14-11-2016 09:52:10]: Tokenized element: QUIT
+[14-11-2016 09:52:10]: Ryan@35.40.131.219 has quit.
+[14-11-2016 09:52:10]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 09:52:10]: Ryan on 35.40.131.219 was found in the database.
+[14-11-2016 09:52:59]: Connection from 35.40.131.219:56675.
+[14-11-2016 09:52:59]: Searching for available port.
+[14-11-2016 09:52:59]: Testing 59394.
+[14-11-2016 09:52:59]: Using 59394.
+[14-11-2016 09:52:59]: Port available on 59394. Establishing socket for listening.
+[14-11-2016 09:52:59]: 59394 sent to client for usage.
+[14-11-2016 09:52:59]: Connection from 0.0.0.0:56676.
+[14-11-2016 09:52:59]: Terminating client connection.
+[14-11-2016 09:52:59]: Sending connection readiness to client.
+[14-11-2016 09:52:59]: Received command META
+[14-11-2016 09:52:59]: Tokenized element: META
+[14-11-2016 09:52:59]: Received META command from client.
+[14-11-2016 09:52:59]: Accepting Connection on 62264
+[14-11-2016 09:52:59]: Initiating Metadata Upload Proc
+[14-11-2016 09:52:59]: Command was META
+[14-11-2016 09:52:59]: --- Starting Metadata Upload Process ---
+[14-11-2016 09:52:59]: writing to file.
+[14-11-2016 09:52:59]: Writing Line: <?xml version="1.0" encoding="UTF-8" standalone="no"?><meta>
+[14-11-2016 09:52:59]: Writing Line: <files>
+[14-11-2016 09:52:59]: Writing Line:     <file>
+[14-11-2016 09:52:59]: Writing Line:         <name>ryan.txt</name>
+[14-11-2016 09:52:59]: Writing Line:         <desc>The ryan korteway text file.</desc>
+[14-11-2016 09:52:59]: Writing Line:     </file>
+[14-11-2016 09:52:59]: Writing Line:     <file>
+[14-11-2016 09:52:59]: Writing Line:         <name>Bing.txt</name>
+[14-11-2016 09:52:59]: Writing Line:         <desc>The random noises text file.</desc>
+[14-11-2016 09:52:59]: Writing Line:     </file>
+[14-11-2016 09:52:59]: Writing Line: </files>
+[14-11-2016 09:52:59]: Writing Line: <connection><address>35.40.131.219</address><username>Ryan</username><speed>Ethernet</speed></connection></meta>
+[14-11-2016 09:52:59]: File Write Ended.
+[14-11-2016 09:52:59]: Feeding ./tmp/35.40.131.219 into parser.
+[14-11-2016 09:52:59]: Add Connection to Database
+[14-11-2016 09:52:59]: Parsed Connection as Ryan@35.40.131.219 with rate of Ethernet
+[14-11-2016 09:52:59]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 09:52:59]: Ryan on 35.40.131.219 was not located in the database.
+[14-11-2016 09:52:59]: Peer does not exist, adding.
+[14-11-2016 09:52:59]: Update File Index
+[14-11-2016 09:52:59]: Current Element: file
+[14-11-2016 09:52:59]: Parsing file ryan.txt.
+[14-11-2016 09:52:59]: Current Element: file
+[14-11-2016 09:52:59]: Parsing file Bing.txt.
+[14-11-2016 09:52:59]: status returned true
+[14-11-2016 09:52:59]: Sending connection readiness to client.
+[14-11-2016 09:53:54]: Received command SEARCH text 
+[14-11-2016 09:53:54]: Tokenized element: SEARCH
+[14-11-2016 09:53:54]: Search Term: text
+[14-11-2016 09:53:54]: ryan.txt on 35.40.131.219 with The ryan korteway text file.
+[14-11-2016 09:53:54]: Match found for text, adding to list
+[14-11-2016 09:53:54]: Bing.txt on 35.40.131.219 with The random noises text file.
+[14-11-2016 09:53:54]: Match found for text, adding to list
+[14-11-2016 09:53:54]: Sending: Ethernet,35.40.131.219,ryan.txt
+[14-11-2016 09:53:54]: Sending: Ethernet,35.40.131.219,Bing.txt
+[14-11-2016 09:53:54]: Sending connection readiness to client.
+[14-11-2016 09:54:03]: Received command QUIT Ryan 35.40.131.219 
+[14-11-2016 09:54:03]: Tokenized element: QUIT
+[14-11-2016 09:54:03]: Ryan@35.40.131.219 has quit.
+[14-11-2016 09:54:03]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 09:54:03]: Ryan on 35.40.131.219 was found in the database.
+[14-11-2016 09:54:41]: Connection from 35.40.131.219:56686.
+[14-11-2016 09:54:41]: Searching for available port.
+[14-11-2016 09:54:41]: Testing 42869.
+[14-11-2016 09:54:41]: Using 42869.
+[14-11-2016 09:54:41]: Port available on 42869. Establishing socket for listening.
+[14-11-2016 09:54:41]: 42869 sent to client for usage.
+[14-11-2016 09:54:41]: Connection from 0.0.0.0:56687.
+[14-11-2016 09:54:41]: Terminating client connection.
+[14-11-2016 09:54:41]: Sending connection readiness to client.
+[14-11-2016 09:54:41]: Received command META
+[14-11-2016 09:54:41]: Tokenized element: META
+[14-11-2016 09:54:41]: Received META command from client.
+[14-11-2016 09:54:41]: Accepting Connection on 61268
+[14-11-2016 09:54:41]: Initiating Metadata Upload Proc
+[14-11-2016 09:54:41]: Command was META
+[14-11-2016 09:54:41]: --- Starting Metadata Upload Process ---
+[14-11-2016 09:54:41]: writing to file.
+[14-11-2016 09:54:41]: Writing Line: <?xml version="1.0" encoding="UTF-8" standalone="no"?><meta>
+[14-11-2016 09:54:41]: Writing Line: <files>
+[14-11-2016 09:54:41]: Writing Line:     <file>
+[14-11-2016 09:54:41]: Writing Line:         <name>ryan.txt</name>
+[14-11-2016 09:54:41]: Writing Line:         <desc>The ryan korteway text file.</desc>
+[14-11-2016 09:54:41]: Writing Line:     </file>
+[14-11-2016 09:54:41]: Writing Line:     <file>
+[14-11-2016 09:54:41]: Writing Line:         <name>Bing.txt</name>
+[14-11-2016 09:54:41]: Writing Line:         <desc>The random noises text file.</desc>
+[14-11-2016 09:54:41]: Writing Line:     </file>
+[14-11-2016 09:54:41]: Writing Line: </files>
+[14-11-2016 09:54:41]: Writing Line: <connection><address>35.40.131.219</address><username>Ryan</username><speed>Ethernet</speed></connection></meta>
+[14-11-2016 09:54:41]: File Write Ended.
+[14-11-2016 09:54:41]: Feeding ./tmp/35.40.131.219 into parser.
+[14-11-2016 09:54:41]: Add Connection to Database
+[14-11-2016 09:54:41]: Parsed Connection as Ryan@35.40.131.219 with rate of Ethernet
+[14-11-2016 09:54:41]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 09:54:41]: Ryan on 35.40.131.219 was not located in the database.
+[14-11-2016 09:54:41]: Peer does not exist, adding.
+[14-11-2016 09:54:41]: Update File Index
+[14-11-2016 09:54:41]: Current Element: file
+[14-11-2016 09:54:41]: Parsing file ryan.txt.
+[14-11-2016 09:54:41]: Current Element: file
+[14-11-2016 09:54:41]: Parsing file Bing.txt.
+[14-11-2016 09:54:42]: status returned true
+[14-11-2016 09:54:42]: Sending connection readiness to client.
+[14-11-2016 09:54:44]: Received command SEARCH text 
+[14-11-2016 09:54:44]: Tokenized element: SEARCH
+[14-11-2016 09:54:44]: Search Term: text
+[14-11-2016 09:54:44]: ryan.txt on 35.40.131.219 with The ryan korteway text file.
+[14-11-2016 09:54:44]: Match found for text, adding to list
+[14-11-2016 09:54:44]: Bing.txt on 35.40.131.219 with The random noises text file.
+[14-11-2016 09:54:44]: Match found for text, adding to list
+[14-11-2016 09:54:44]: Sending: Ethernet,35.40.131.219,ryan.txt
+[14-11-2016 09:54:44]: Sending: Ethernet,35.40.131.219,Bing.txt
+[14-11-2016 09:54:44]: Sending connection readiness to client.
+[14-11-2016 09:56:24]: Received command QUIT Ryan 35.40.131.219 
+[14-11-2016 09:56:24]: Tokenized element: QUIT
+[14-11-2016 09:56:24]: Ryan@35.40.131.219 has quit.
+[14-11-2016 09:56:24]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 09:56:24]: Ryan on 35.40.131.219 was found in the database.
+[14-11-2016 09:56:52]: Connection from 35.40.131.219:56693.
+[14-11-2016 09:56:52]: Searching for available port.
+[14-11-2016 09:56:52]: Testing 58722.
+[14-11-2016 09:56:52]: Using 58722.
+[14-11-2016 09:56:52]: Port available on 58722. Establishing socket for listening.
+[14-11-2016 09:56:52]: 58722 sent to client for usage.
+[14-11-2016 09:56:52]: Connection from 0.0.0.0:56694.
+[14-11-2016 09:56:52]: Terminating client connection.
+[14-11-2016 09:56:52]: Sending connection readiness to client.
+[14-11-2016 09:56:52]: Received command META
+[14-11-2016 09:56:52]: Tokenized element: META
+[14-11-2016 09:56:52]: Received META command from client.
+[14-11-2016 09:56:52]: Accepting Connection on 60687
+[14-11-2016 09:56:52]: Initiating Metadata Upload Proc
+[14-11-2016 09:56:52]: Command was META
+[14-11-2016 09:56:52]: --- Starting Metadata Upload Process ---
+[14-11-2016 09:56:52]: writing to file.
+[14-11-2016 09:56:52]: Writing Line: <?xml version="1.0" encoding="UTF-8" standalone="no"?><meta>
+[14-11-2016 09:56:52]: Writing Line: <files>
+[14-11-2016 09:56:52]: Writing Line:     <file>
+[14-11-2016 09:56:52]: Writing Line:         <name>ryan.txt</name>
+[14-11-2016 09:56:52]: Writing Line:         <desc>The ryan korteway text file.</desc>
+[14-11-2016 09:56:52]: Writing Line:     </file>
+[14-11-2016 09:56:52]: Writing Line:     <file>
+[14-11-2016 09:56:52]: Writing Line:         <name>Bing.txt</name>
+[14-11-2016 09:56:52]: Writing Line:         <desc>The random noises text file.</desc>
+[14-11-2016 09:56:52]: Writing Line:     </file>
+[14-11-2016 09:56:52]: Writing Line: </files>
+[14-11-2016 09:56:52]: Writing Line: <connection><address>35.40.131.219</address><username>Ryan</username><speed>Wi-Fi</speed></connection></meta>
+[14-11-2016 09:56:52]: File Write Ended.
+[14-11-2016 09:56:52]: Feeding ./tmp/35.40.131.219 into parser.
+[14-11-2016 09:56:52]: Add Connection to Database
+[14-11-2016 09:56:52]: Parsed Connection as Ryan@35.40.131.219 with rate of Wi-Fi
+[14-11-2016 09:56:52]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 09:56:52]: Ryan on 35.40.131.219 was not located in the database.
+[14-11-2016 09:56:52]: Peer does not exist, adding.
+[14-11-2016 09:56:52]: Update File Index
+[14-11-2016 09:56:52]: Current Element: file
+[14-11-2016 09:56:52]: Parsing file ryan.txt.
+[14-11-2016 09:56:52]: Current Element: file
+[14-11-2016 09:56:52]: Parsing file Bing.txt.
+[14-11-2016 09:56:52]: status returned true
+[14-11-2016 09:56:52]: Sending connection readiness to client.
+[14-11-2016 09:56:57]: Received command SEARCH text 
+[14-11-2016 09:56:57]: Tokenized element: SEARCH
+[14-11-2016 09:56:57]: Search Term: text
+[14-11-2016 09:56:57]: ryan.txt on 35.40.131.219 with The ryan korteway text file.
+[14-11-2016 09:56:57]: Match found for text, adding to list
+[14-11-2016 09:56:57]: Bing.txt on 35.40.131.219 with The random noises text file.
+[14-11-2016 09:56:57]: Match found for text, adding to list
+[14-11-2016 09:56:57]: Sending: Wi-Fi,35.40.131.219,ryan.txt
+[14-11-2016 09:56:57]: Sending: Wi-Fi,35.40.131.219,Bing.txt
+[14-11-2016 09:56:57]: Sending connection readiness to client.
+[14-11-2016 09:59:02]: Received command QUIT Ryan 35.40.131.219 
+[14-11-2016 09:59:02]: Tokenized element: QUIT
+[14-11-2016 09:59:02]: Ryan@35.40.131.219 has quit.
+[14-11-2016 09:59:02]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 09:59:02]: Ryan on 35.40.131.219 was found in the database.
+[14-11-2016 09:59:35]: Connection from 35.40.131.219:56698.
+[14-11-2016 09:59:35]: Searching for available port.
+[14-11-2016 09:59:35]: Testing 35246.
+[14-11-2016 09:59:35]: Using 35246.
+[14-11-2016 09:59:35]: Port available on 35246. Establishing socket for listening.
+[14-11-2016 09:59:35]: 35246 sent to client for usage.
+[14-11-2016 09:59:35]: Connection from 0.0.0.0:56699.
+[14-11-2016 09:59:35]: Terminating client connection.
+[14-11-2016 09:59:35]: Sending connection readiness to client.
+[14-11-2016 09:59:35]: Received command META
+[14-11-2016 09:59:35]: Tokenized element: META
+[14-11-2016 09:59:35]: Received META command from client.
+[14-11-2016 09:59:35]: Accepting Connection on 52275
+[14-11-2016 09:59:35]: Initiating Metadata Upload Proc
+[14-11-2016 09:59:35]: Command was META
+[14-11-2016 09:59:35]: --- Starting Metadata Upload Process ---
+[14-11-2016 09:59:35]: writing to file.
+[14-11-2016 09:59:35]: Writing Line: <?xml version="1.0" encoding="UTF-8" standalone="no"?><meta>
+[14-11-2016 09:59:35]: Writing Line: <files>
+[14-11-2016 09:59:35]: Writing Line:     <file>
+[14-11-2016 09:59:35]: Writing Line:         <name>ryan.txt</name>
+[14-11-2016 09:59:35]: Writing Line:         <desc>The ryan korteway text file.</desc>
+[14-11-2016 09:59:35]: Writing Line:     </file>
+[14-11-2016 09:59:35]: Writing Line:     <file>
+[14-11-2016 09:59:35]: Writing Line:         <name>Bing.txt</name>
+[14-11-2016 09:59:35]: Writing Line:         <desc>The random noises text file.</desc>
+[14-11-2016 09:59:35]: Writing Line:     </file>
+[14-11-2016 09:59:35]: Writing Line: </files>
+[14-11-2016 09:59:35]: Writing Line: <connection><address>35.40.131.219</address><username>Ryan</username><speed>Ethernet</speed></connection></meta>
+[14-11-2016 09:59:35]: File Write Ended.
+[14-11-2016 09:59:35]: Feeding ./tmp/35.40.131.219 into parser.
+[14-11-2016 09:59:35]: Add Connection to Database
+[14-11-2016 09:59:35]: Parsed Connection as Ryan@35.40.131.219 with rate of Ethernet
+[14-11-2016 09:59:35]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 09:59:35]: Ryan on 35.40.131.219 was not located in the database.
+[14-11-2016 09:59:35]: Peer does not exist, adding.
+[14-11-2016 09:59:35]: Update File Index
+[14-11-2016 09:59:35]: Current Element: file
+[14-11-2016 09:59:35]: Parsing file ryan.txt.
+[14-11-2016 09:59:35]: Current Element: file
+[14-11-2016 09:59:35]: Parsing file Bing.txt.
+[14-11-2016 09:59:35]: status returned true
+[14-11-2016 09:59:35]: Sending connection readiness to client.
+[14-11-2016 09:59:38]: Received command SEARCH text 
+[14-11-2016 09:59:38]: Tokenized element: SEARCH
+[14-11-2016 09:59:38]: Search Term: text
+[14-11-2016 09:59:38]: ryan.txt on 35.40.131.219 with The ryan korteway text file.
+[14-11-2016 09:59:38]: Match found for text, adding to list
+[14-11-2016 09:59:38]: Bing.txt on 35.40.131.219 with The random noises text file.
+[14-11-2016 09:59:38]: Match found for text, adding to list
+[14-11-2016 09:59:38]: Sending: Ethernet,35.40.131.219,ryan.txt
+[14-11-2016 09:59:38]: Sending: Ethernet,35.40.131.219,Bing.txt
+[14-11-2016 09:59:38]: Sending connection readiness to client.
+[14-11-2016 10:02:48]: Received command QUIT Ryan 35.40.131.219 
+[14-11-2016 10:02:48]: Tokenized element: QUIT
+[14-11-2016 10:02:48]: Ryan@35.40.131.219 has quit.
+[14-11-2016 10:02:48]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 10:02:48]: Ryan on 35.40.131.219 was found in the database.
+[14-11-2016 10:03:22]: Connection from 35.40.131.219:56735.
+[14-11-2016 10:03:22]: Searching for available port.
+[14-11-2016 10:03:22]: Testing 47697.
+[14-11-2016 10:03:22]: Using 47697.
+[14-11-2016 10:03:22]: Port available on 47697. Establishing socket for listening.
+[14-11-2016 10:03:22]: 47697 sent to client for usage.
+[14-11-2016 10:03:22]: Connection from 0.0.0.0:56736.
+[14-11-2016 10:03:22]: Terminating client connection.
+[14-11-2016 10:03:22]: Sending connection readiness to client.
+[14-11-2016 10:03:23]: Received command META
+[14-11-2016 10:03:23]: Tokenized element: META
+[14-11-2016 10:03:23]: Received META command from client.
+[14-11-2016 10:03:23]: Accepting Connection on 44012
+[14-11-2016 10:03:23]: Initiating Metadata Upload Proc
+[14-11-2016 10:03:23]: Command was META
+[14-11-2016 10:03:23]: --- Starting Metadata Upload Process ---
+[14-11-2016 10:03:23]: writing to file.
+[14-11-2016 10:03:23]: Writing Line: <?xml version="1.0" encoding="UTF-8" standalone="no"?><meta>
+[14-11-2016 10:03:23]: Writing Line: <files>
+[14-11-2016 10:03:23]: Writing Line:     <file>
+[14-11-2016 10:03:23]: Writing Line:         <name>ryan.txt</name>
+[14-11-2016 10:03:23]: Writing Line:         <desc>The ryan korteway text file.</desc>
+[14-11-2016 10:03:23]: Writing Line:     </file>
+[14-11-2016 10:03:23]: Writing Line:     <file>
+[14-11-2016 10:03:23]: Writing Line:         <name>Bing.txt</name>
+[14-11-2016 10:03:23]: Writing Line:         <desc>The random noises text file.</desc>
+[14-11-2016 10:03:23]: Writing Line:     </file>
+[14-11-2016 10:03:23]: Writing Line: </files>
+[14-11-2016 10:03:23]: Writing Line: <connection><address>35.40.131.219</address><username>Ryan</username><speed>Ethernet</speed></connection></meta>
+[14-11-2016 10:03:23]: File Write Ended.
+[14-11-2016 10:03:23]: Feeding ./tmp/35.40.131.219 into parser.
+[14-11-2016 10:03:23]: Add Connection to Database
+[14-11-2016 10:03:23]: Parsed Connection as Ryan@35.40.131.219 with rate of Ethernet
+[14-11-2016 10:03:23]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 10:03:23]: Ryan on 35.40.131.219 was not located in the database.
+[14-11-2016 10:03:23]: Peer does not exist, adding.
+[14-11-2016 10:03:23]: Update File Index
+[14-11-2016 10:03:23]: Current Element: file
+[14-11-2016 10:03:23]: Parsing file ryan.txt.
+[14-11-2016 10:03:23]: Current Element: file
+[14-11-2016 10:03:23]: Parsing file Bing.txt.
+[14-11-2016 10:03:23]: status returned true
+[14-11-2016 10:03:23]: Sending connection readiness to client.
+[14-11-2016 10:03:25]: Received command SEARCH text 
+[14-11-2016 10:03:25]: Tokenized element: SEARCH
+[14-11-2016 10:03:25]: Search Term: text
+[14-11-2016 10:03:25]: ryan.txt on 35.40.131.219 with The ryan korteway text file.
+[14-11-2016 10:03:25]: Match found for text, adding to list
+[14-11-2016 10:03:25]: Bing.txt on 35.40.131.219 with The random noises text file.
+[14-11-2016 10:03:25]: Match found for text, adding to list
+[14-11-2016 10:03:25]: Sending: Ethernet,35.40.131.219,ryan.txt
+[14-11-2016 10:03:25]: Sending: Ethernet,35.40.131.219,Bing.txt
+[14-11-2016 10:03:25]: Sending connection readiness to client.
+[14-11-2016 10:04:28]: Received command QUIT Ryan 35.40.131.219 
+[14-11-2016 10:04:28]: Tokenized element: QUIT
+[14-11-2016 10:04:28]: Ryan@35.40.131.219 has quit.
+[14-11-2016 10:04:28]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 10:04:28]: Ryan on 35.40.131.219 was found in the database.
+[14-11-2016 10:04:56]: Connection from 35.40.131.219:56739.
+[14-11-2016 10:04:56]: Searching for available port.
+[14-11-2016 10:04:56]: Testing 59612.
+[14-11-2016 10:04:56]: Using 59612.
+[14-11-2016 10:04:56]: Port available on 59612. Establishing socket for listening.
+[14-11-2016 10:04:56]: 59612 sent to client for usage.
+[14-11-2016 10:04:56]: Connection from 0.0.0.0:56740.
+[14-11-2016 10:04:56]: Terminating client connection.
+[14-11-2016 10:04:56]: Sending connection readiness to client.
+[14-11-2016 10:04:56]: Received command META
+[14-11-2016 10:04:56]: Tokenized element: META
+[14-11-2016 10:04:56]: Received META command from client.
+[14-11-2016 10:04:56]: Accepting Connection on 54963
+[14-11-2016 10:04:56]: Initiating Metadata Upload Proc
+[14-11-2016 10:04:56]: Command was META
+[14-11-2016 10:04:56]: --- Starting Metadata Upload Process ---
+[14-11-2016 10:04:56]: writing to file.
+[14-11-2016 10:04:56]: Writing Line: <?xml version="1.0" encoding="UTF-8" standalone="no"?><meta>
+[14-11-2016 10:04:56]: Writing Line: <files>
+[14-11-2016 10:04:56]: Writing Line:     <file>
+[14-11-2016 10:04:56]: Writing Line:         <name>ryan.txt</name>
+[14-11-2016 10:04:56]: Writing Line:         <desc>The ryan korteway text file.</desc>
+[14-11-2016 10:04:56]: Writing Line:     </file>
+[14-11-2016 10:04:56]: Writing Line:     <file>
+[14-11-2016 10:04:56]: Writing Line:         <name>Bing.txt</name>
+[14-11-2016 10:04:56]: Writing Line:         <desc>The random noises text file.</desc>
+[14-11-2016 10:04:56]: Writing Line:     </file>
+[14-11-2016 10:04:56]: Writing Line: </files>
+[14-11-2016 10:04:56]: Writing Line: <connection><address>35.40.131.219</address><username>Ryan</username><speed>Ethernet</speed></connection></meta>
+[14-11-2016 10:04:56]: File Write Ended.
+[14-11-2016 10:04:56]: Feeding ./tmp/35.40.131.219 into parser.
+[14-11-2016 10:04:56]: Add Connection to Database
+[14-11-2016 10:04:56]: Parsed Connection as Ryan@35.40.131.219 with rate of Ethernet
+[14-11-2016 10:04:56]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 10:04:56]: Ryan on 35.40.131.219 was not located in the database.
+[14-11-2016 10:04:56]: Peer does not exist, adding.
+[14-11-2016 10:04:56]: Update File Index
+[14-11-2016 10:04:56]: Current Element: file
+[14-11-2016 10:04:56]: Parsing file ryan.txt.
+[14-11-2016 10:04:56]: Current Element: file
+[14-11-2016 10:04:56]: Parsing file Bing.txt.
+[14-11-2016 10:04:56]: status returned true
+[14-11-2016 10:04:56]: Sending connection readiness to client.
+[14-11-2016 10:05:01]: Received command SEARCH text 
+[14-11-2016 10:05:01]: Tokenized element: SEARCH
+[14-11-2016 10:05:01]: Search Term: text
+[14-11-2016 10:05:01]: ryan.txt on 35.40.131.219 with The ryan korteway text file.
+[14-11-2016 10:05:01]: Match found for text, adding to list
+[14-11-2016 10:05:01]: Bing.txt on 35.40.131.219 with The random noises text file.
+[14-11-2016 10:05:01]: Match found for text, adding to list
+[14-11-2016 10:05:01]: Sending: Ethernet,35.40.131.219,ryan.txt
+[14-11-2016 10:05:01]: Sending: Ethernet,35.40.131.219,Bing.txt
+[14-11-2016 10:05:01]: Sending connection readiness to client.
+[14-11-2016 10:13:37]: Received command QUIT Ryan 35.40.131.219 
+[14-11-2016 10:13:37]: Tokenized element: QUIT
+[14-11-2016 10:13:37]: Ryan@35.40.131.219 has quit.
+[14-11-2016 10:13:37]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 10:13:37]: Ryan on 35.40.131.219 was found in the database.
+[14-11-2016 10:15:53]: Connection from 35.40.131.219:56777.
+[14-11-2016 10:15:53]: Searching for available port.
+[14-11-2016 10:15:53]: Testing 38596.
+[14-11-2016 10:15:53]: Using 38596.
+[14-11-2016 10:15:53]: Port available on 38596. Establishing socket for listening.
+[14-11-2016 10:15:53]: 38596 sent to client for usage.
+[14-11-2016 10:15:53]: Connection from 0.0.0.0:56778.
+[14-11-2016 10:15:53]: Terminating client connection.
+[14-11-2016 10:15:53]: Sending connection readiness to client.
+[14-11-2016 10:15:53]: Received command META
+[14-11-2016 10:15:53]: Tokenized element: META
+[14-11-2016 10:15:53]: Received META command from client.
+[14-11-2016 10:15:53]: Accepting Connection on 60797
+[14-11-2016 10:15:53]: Initiating Metadata Upload Proc
+[14-11-2016 10:15:53]: Command was META
+[14-11-2016 10:15:53]: --- Starting Metadata Upload Process ---
+[14-11-2016 10:15:54]: writing to file.
+[14-11-2016 10:15:54]: Writing Line: <?xml version="1.0" encoding="UTF-8" standalone="no"?><meta>
+[14-11-2016 10:15:54]: Writing Line: <files>
+[14-11-2016 10:15:54]: Writing Line:     <file>
+[14-11-2016 10:15:54]: Writing Line:         <name>ryan.txt</name>
+[14-11-2016 10:15:54]: Writing Line:         <desc>The ryan korteway text file.</desc>
+[14-11-2016 10:15:54]: Writing Line:     </file>
+[14-11-2016 10:15:54]: Writing Line:     <file>
+[14-11-2016 10:15:54]: Writing Line:         <name>Bing.txt</name>
+[14-11-2016 10:15:54]: Writing Line:         <desc>The random noises text file.</desc>
+[14-11-2016 10:15:54]: Writing Line:     </file>
+[14-11-2016 10:15:54]: Writing Line: </files>
+[14-11-2016 10:15:54]: Writing Line: <connection><address>35.40.131.219</address><username>Ryan</username><speed>Wi-Fi</speed></connection></meta>
+[14-11-2016 10:15:54]: File Write Ended.
+[14-11-2016 10:15:54]: Feeding ./tmp/35.40.131.219 into parser.
+[14-11-2016 10:15:54]: Add Connection to Database
+[14-11-2016 10:15:54]: Parsed Connection as Ryan@35.40.131.219 with rate of Wi-Fi
+[14-11-2016 10:15:54]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 10:15:54]: Ryan on 35.40.131.219 was not located in the database.
+[14-11-2016 10:15:54]: Peer does not exist, adding.
+[14-11-2016 10:15:54]: Update File Index
+[14-11-2016 10:15:54]: Current Element: file
+[14-11-2016 10:15:54]: Parsing file ryan.txt.
+[14-11-2016 10:15:54]: Current Element: file
+[14-11-2016 10:15:54]: Parsing file Bing.txt.
+[14-11-2016 10:15:54]: status returned true
+[14-11-2016 10:15:54]: Sending connection readiness to client.
+[14-11-2016 10:15:56]: Received command SEARCH text 
+[14-11-2016 10:15:56]: Tokenized element: SEARCH
+[14-11-2016 10:15:56]: Search Term: text
+[14-11-2016 10:15:56]: ryan.txt on 35.40.131.219 with The ryan korteway text file.
+[14-11-2016 10:15:56]: Match found for text, adding to list
+[14-11-2016 10:15:56]: Bing.txt on 35.40.131.219 with The random noises text file.
+[14-11-2016 10:15:56]: Match found for text, adding to list
+[14-11-2016 10:15:56]: Sending: Wi-Fi,35.40.131.219,ryan.txt
+[14-11-2016 10:15:56]: Sending: Wi-Fi,35.40.131.219,Bing.txt
+[14-11-2016 10:15:56]: Sending connection readiness to client.
+[14-11-2016 10:19:53]: Received command QUIT Ryan 35.40.131.219 
+[14-11-2016 10:19:53]: Tokenized element: QUIT
+[14-11-2016 10:19:53]: Ryan@35.40.131.219 has quit.
+[14-11-2016 10:19:53]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 10:19:53]: Ryan on 35.40.131.219 was found in the database.
+[14-11-2016 10:21:53]: Connection from 35.40.131.219:56803.
+[14-11-2016 10:21:53]: Searching for available port.
+[14-11-2016 10:21:53]: Testing 64443.
+[14-11-2016 10:21:53]: Using 64443.
+[14-11-2016 10:21:53]: Port available on 64443. Establishing socket for listening.
+[14-11-2016 10:21:53]: 64443 sent to client for usage.
+[14-11-2016 10:21:53]: Connection from 0.0.0.0:56804.
+[14-11-2016 10:21:53]: Terminating client connection.
+[14-11-2016 10:21:53]: Sending connection readiness to client.
+[14-11-2016 10:21:53]: Received command META
+[14-11-2016 10:21:53]: Tokenized element: META
+[14-11-2016 10:21:53]: Received META command from client.
+[14-11-2016 10:21:53]: Accepting Connection on 46624
+[14-11-2016 10:21:53]: Initiating Metadata Upload Proc
+[14-11-2016 10:21:53]: Command was META
+[14-11-2016 10:21:53]: --- Starting Metadata Upload Process ---
+[14-11-2016 10:21:53]: writing to file.
+[14-11-2016 10:21:53]: Writing Line: <?xml version="1.0" encoding="UTF-8" standalone="no"?><meta>
+[14-11-2016 10:21:53]: Writing Line: <files>
+[14-11-2016 10:21:53]: Writing Line:     <file>
+[14-11-2016 10:21:53]: Writing Line:         <name>ryan.txt</name>
+[14-11-2016 10:21:53]: Writing Line:         <desc>The ryan korteway text file.</desc>
+[14-11-2016 10:21:53]: Writing Line:     </file>
+[14-11-2016 10:21:53]: Writing Line:     <file>
+[14-11-2016 10:21:53]: Writing Line:         <name>Bing.txt</name>
+[14-11-2016 10:21:53]: Writing Line:         <desc>The random noises text file.</desc>
+[14-11-2016 10:21:53]: Writing Line:     </file>
+[14-11-2016 10:21:53]: Writing Line: </files>
+[14-11-2016 10:21:53]: Writing Line: <connection><address>35.40.131.219</address><username>Ryan</username><speed>Wi-Fi</speed></connection></meta>
+[14-11-2016 10:21:53]: File Write Ended.
+[14-11-2016 10:21:53]: Feeding ./tmp/35.40.131.219 into parser.
+[14-11-2016 10:21:53]: Add Connection to Database
+[14-11-2016 10:21:53]: Parsed Connection as Ryan@35.40.131.219 with rate of Wi-Fi
+[14-11-2016 10:21:53]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 10:21:53]: Ryan on 35.40.131.219 was not located in the database.
+[14-11-2016 10:21:53]: Peer does not exist, adding.
+[14-11-2016 10:21:53]: Update File Index
+[14-11-2016 10:21:53]: Current Element: file
+[14-11-2016 10:21:53]: Parsing file ryan.txt.
+[14-11-2016 10:21:53]: Current Element: file
+[14-11-2016 10:21:53]: Parsing file Bing.txt.
+[14-11-2016 10:21:53]: status returned true
+[14-11-2016 10:21:53]: Sending connection readiness to client.
+[14-11-2016 10:21:58]: Received command SEARCH text 
+[14-11-2016 10:21:58]: Tokenized element: SEARCH
+[14-11-2016 10:21:58]: Search Term: text
+[14-11-2016 10:21:58]: ryan.txt on 35.40.131.219 with The ryan korteway text file.
+[14-11-2016 10:21:58]: Match found for text, adding to list
+[14-11-2016 10:21:58]: Bing.txt on 35.40.131.219 with The random noises text file.
+[14-11-2016 10:21:58]: Match found for text, adding to list
+[14-11-2016 10:21:58]: Sending: Wi-Fi,35.40.131.219,ryan.txt
+[14-11-2016 10:21:58]: Sending: Wi-Fi,35.40.131.219,Bing.txt
+[14-11-2016 10:21:58]: Sending connection readiness to client.
+[14-11-2016 10:23:30]: Received command QUIT Ryan 35.40.131.219 
+[14-11-2016 10:23:30]: Tokenized element: QUIT
+[14-11-2016 10:23:30]: Ryan@35.40.131.219 has quit.
+[14-11-2016 10:23:30]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 10:23:30]: Ryan on 35.40.131.219 was found in the database.
+[14-11-2016 10:27:03]: Connection from 35.40.131.219:56813.
+[14-11-2016 10:27:03]: Searching for available port.
+[14-11-2016 10:27:03]: Testing 59828.
+[14-11-2016 10:27:03]: Using 59828.
+[14-11-2016 10:27:03]: Port available on 59828. Establishing socket for listening.
+[14-11-2016 10:27:03]: 59828 sent to client for usage.
+[14-11-2016 10:27:03]: Connection from 0.0.0.0:56814.
+[14-11-2016 10:27:03]: Terminating client connection.
+[14-11-2016 10:27:03]: Sending connection readiness to client.
+[14-11-2016 10:27:03]: Received command META
+[14-11-2016 10:27:03]: Tokenized element: META
+[14-11-2016 10:27:03]: Received META command from client.
+[14-11-2016 10:27:03]: Accepting Connection on 48341
+[14-11-2016 10:27:03]: Initiating Metadata Upload Proc
+[14-11-2016 10:27:03]: Command was META
+[14-11-2016 10:27:03]: --- Starting Metadata Upload Process ---
+[14-11-2016 10:27:03]: writing to file.
+[14-11-2016 10:27:03]: Writing Line: <?xml version="1.0" encoding="UTF-8" standalone="no"?><meta>
+[14-11-2016 10:27:03]: Writing Line: <files>
+[14-11-2016 10:27:03]: Writing Line:     <file>
+[14-11-2016 10:27:03]: Writing Line:         <name>ryan.txt</name>
+[14-11-2016 10:27:03]: Writing Line:         <desc>The ryan korteway text file.</desc>
+[14-11-2016 10:27:03]: Writing Line:     </file>
+[14-11-2016 10:27:03]: Writing Line:     <file>
+[14-11-2016 10:27:03]: Writing Line:         <name>Bing.txt</name>
+[14-11-2016 10:27:03]: Writing Line:         <desc>The random noises text file.</desc>
+[14-11-2016 10:27:03]: Writing Line:     </file>
+[14-11-2016 10:27:03]: Writing Line: </files>
+[14-11-2016 10:27:03]: Writing Line: <connection><address>35.40.131.219</address><username>Ryan</username><speed>Ethernet</speed></connection></meta>
+[14-11-2016 10:27:03]: File Write Ended.
+[14-11-2016 10:27:03]: Feeding ./tmp/35.40.131.219 into parser.
+[14-11-2016 10:27:03]: Add Connection to Database
+[14-11-2016 10:27:03]: Parsed Connection as Ryan@35.40.131.219 with rate of Ethernet
+[14-11-2016 10:27:03]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 10:27:03]: Ryan on 35.40.131.219 was not located in the database.
+[14-11-2016 10:27:03]: Peer does not exist, adding.
+[14-11-2016 10:27:03]: Update File Index
+[14-11-2016 10:27:03]: Current Element: file
+[14-11-2016 10:27:03]: Parsing file ryan.txt.
+[14-11-2016 10:27:03]: Current Element: file
+[14-11-2016 10:27:03]: Parsing file Bing.txt.
+[14-11-2016 10:27:03]: status returned true
+[14-11-2016 10:27:03]: Sending connection readiness to client.
+[14-11-2016 10:27:06]: Received command SEARCH text 
+[14-11-2016 10:27:06]: Tokenized element: SEARCH
+[14-11-2016 10:27:06]: Search Term: text
+[14-11-2016 10:27:06]: ryan.txt on 35.40.131.219 with The ryan korteway text file.
+[14-11-2016 10:27:06]: Match found for text, adding to list
+[14-11-2016 10:27:06]: Bing.txt on 35.40.131.219 with The random noises text file.
+[14-11-2016 10:27:06]: Match found for text, adding to list
+[14-11-2016 10:27:06]: Sending: Ethernet,35.40.131.219,ryan.txt
+[14-11-2016 10:27:06]: Sending: Ethernet,35.40.131.219,Bing.txt
+[14-11-2016 10:27:06]: Sending connection readiness to client.
+[14-11-2016 10:28:22]: Received command QUIT Ryan 35.40.131.219 
+[14-11-2016 10:28:22]: Tokenized element: QUIT
+[14-11-2016 10:28:22]: Ryan@35.40.131.219 has quit.
+[14-11-2016 10:28:22]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 10:28:22]: Ryan on 35.40.131.219 was found in the database.
+[14-11-2016 10:28:52]: Connection from 35.40.131.219:56818.
+[14-11-2016 10:28:52]: Searching for available port.
+[14-11-2016 10:28:52]: Testing 52290.
+[14-11-2016 10:28:52]: Using 52290.
+[14-11-2016 10:28:52]: Port available on 52290. Establishing socket for listening.
+[14-11-2016 10:28:52]: 52290 sent to client for usage.
+[14-11-2016 10:28:52]: Connection from 0.0.0.0:56819.
+[14-11-2016 10:28:52]: Terminating client connection.
+[14-11-2016 10:28:52]: Sending connection readiness to client.
+[14-11-2016 10:28:52]: Received command META
+[14-11-2016 10:28:52]: Tokenized element: META
+[14-11-2016 10:28:52]: Received META command from client.
+[14-11-2016 10:28:52]: Accepting Connection on 33809
+[14-11-2016 10:28:52]: Initiating Metadata Upload Proc
+[14-11-2016 10:28:52]: Command was META
+[14-11-2016 10:28:52]: --- Starting Metadata Upload Process ---
+[14-11-2016 10:28:52]: writing to file.
+[14-11-2016 10:28:52]: Writing Line: <?xml version="1.0" encoding="UTF-8" standalone="no"?><meta>
+[14-11-2016 10:28:52]: Writing Line: <files>
+[14-11-2016 10:28:52]: Writing Line:     <file>
+[14-11-2016 10:28:52]: Writing Line:         <name>ryan.txt</name>
+[14-11-2016 10:28:52]: Writing Line:         <desc>The ryan korteway text file.</desc>
+[14-11-2016 10:28:52]: Writing Line:     </file>
+[14-11-2016 10:28:52]: Writing Line:     <file>
+[14-11-2016 10:28:52]: Writing Line:         <name>Bing.txt</name>
+[14-11-2016 10:28:52]: Writing Line:         <desc>The random noises text file.</desc>
+[14-11-2016 10:28:52]: Writing Line:     </file>
+[14-11-2016 10:28:52]: Writing Line: </files>
+[14-11-2016 10:28:52]: Writing Line: <connection><address>35.40.131.219</address><username>Ryan</username><speed>Ethernet</speed></connection></meta>
+[14-11-2016 10:28:52]: File Write Ended.
+[14-11-2016 10:28:52]: Feeding ./tmp/35.40.131.219 into parser.
+[14-11-2016 10:28:52]: Add Connection to Database
+[14-11-2016 10:28:52]: Parsed Connection as Ryan@35.40.131.219 with rate of Ethernet
+[14-11-2016 10:28:52]: Checking for the existence of Ryan on 35.40.131.219
+[14-11-2016 10:28:52]: Ryan on 35.40.131.219 was not located in the database.
+[14-11-2016 10:28:52]: Peer does not exist, adding.
+[14-11-2016 10:28:52]: Update File Index
+[14-11-2016 10:28:52]: Current Element: file
+[14-11-2016 10:28:52]: Parsing file ryan.txt.
+[14-11-2016 10:28:52]: Current Element: file
+[14-11-2016 10:28:52]: Parsing file Bing.txt.
+[14-11-2016 10:28:52]: status returned true
+[14-11-2016 10:28:52]: Sending connection readiness to client.
+[14-11-2016 10:28:55]: Received command SEARCH text 
+[14-11-2016 10:28:55]: Tokenized element: SEARCH
+[14-11-2016 10:28:55]: Search Term: text
+[14-11-2016 10:28:55]: ryan.txt on 35.40.131.219 with The ryan korteway text file.
+[14-11-2016 10:28:55]: Match found for text, adding to list
+[14-11-2016 10:28:55]: Bing.txt on 35.40.131.219 with The random noises text file.
+[14-11-2016 10:28:55]: Match found for text, adding to list
+[14-11-2016 10:28:55]: Sending: Ethernet,35.40.131.219,ryan.txt
+[14-11-2016 10:28:55]: Sending: Ethernet,35.40.131.219,Bing.txt
+[14-11-2016 10:28:55]: Sending connection readiness to client.

@@ -183,21 +183,22 @@ object DataHandler {
 
     }
 
-    fun dbDump(): ArrayList<String> {
+    fun dbDump(): ArrayList<ResultEntity> {
         try {
-            var peer_stmt = "SELECT peers.peer_name, peers.peer_ip, files.file_name, " +
+            var peer_stmt = "SELECT peers.peer_name, peers.peer_ip, peers.peer_conn, files.file_name, " +
                     "files.file_desc FROM peers INNER JOIN files ON peers.peer_id=files.peer_id;"
             var results: ResultSet? = stmt?.executeQuery(peer_stmt)
-            var list: ArrayList<String> = ArrayList<String>()
+            var list: ArrayList<ResultEntity> = ArrayList()
             while(results?.next() as Boolean) {
-                list.add(results?.getString(1) as String)
+                list.add(ResultEntity(results?.getString(1) as String, results?.getString(2) as String,
+                        results?.getString(3) as String, results?.getString(4) as String, results?.getString(5) as String))
             }
             return list
         } catch (e: Exception) {
             Logger.log("Unable to get data list.")
             Logger.log(e.stackTrace.toString())
         }
-        return ArrayList<String>()
+        return ArrayList<ResultEntity>()
     }
 
     fun delFile(peer_id: Int, file_name: String): Boolean {
