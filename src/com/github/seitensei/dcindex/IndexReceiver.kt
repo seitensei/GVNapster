@@ -23,8 +23,8 @@ class IndexReceiver(var sock: Socket, var command: String, @Volatile var status:
             Logger.log("--- Starting Metadata Upload Process ---")
             System.out.println("META DATA UPLOAD START")
             try {
-                var fileOutput: BufferedWriter = BufferedWriter(FileWriter(File("./tmp/" + sock.inetAddress.hostName)))
-                //var fileOutput = FileWriter(File("./tmp/" + sock.inetAddress.hostAddress))
+                var fileOutput: BufferedWriter = BufferedWriter(FileWriter(File("tmp/" + sock.inetAddress.hostAddress)))
+                //var fileOutput = FileWriter(File("tmp/" + sock.inetAddress.hostAddress))
                 var readFile: String
                 Logger.log("writing to file.")
                 while(true) {
@@ -32,7 +32,7 @@ class IndexReceiver(var sock: Socket, var command: String, @Volatile var status:
                     if(!readFile.contains("EOF")) {
                         Logger.log("Writing Line: $readFile")
                         fileOutput.write(readFile)
-                        fileOutput.write("\r\n")
+                        //fileOutput.write("\r\n")
                         fileOutput.flush()
                     } else {
                         break
@@ -42,8 +42,8 @@ class IndexReceiver(var sock: Socket, var command: String, @Volatile var status:
                 Logger.log("File Write Ended.")
 
                 // Parse it!
-                Logger.log("Feeding ./tmp/" + sock.inetAddress.hostAddress + " into parser.")
-                var xmlAgent = XMLHandler(File("./tmp/" + sock.inetAddress.hostAddress))
+                Logger.log("Feeding tmp/" + sock.inetAddress.hostAddress + " into parser.")
+                var xmlAgent = XMLHandler(File("tmp/" + sock.inetAddress.hostAddress))
                 Logger.log("Add Connection to Database")
                 xmlAgent.addToConn()
                 Logger.log("Update File Index")

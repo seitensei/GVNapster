@@ -25,8 +25,8 @@ fun randPort(): Int {
  * Deletes the temporary and data directories, and recreates them for use.
  */
 fun dirInit() {
-    var dataDir: File = File("./data")
-    var tmpDir: File = File("./tmp")
+    var dataDir: File = File("data")
+    var tmpDir: File = File("tmp")
     dataDir.delete()
     tmpDir.delete()
     dataDir.mkdir()
@@ -48,7 +48,7 @@ fun main(args: Array<String>) {
 
     if(command.toLowerCase().equals("xml")) {
         Logger.log("XML testing")
-        var xmlFile: File = File("./toServer.xml")
+        var xmlFile: File = File("toServer.xml")
         var xmlAgent: XMLHandler = XMLHandler(xmlFile)
         xmlAgent.addToConn()
         Logger.log("XML testing ended")

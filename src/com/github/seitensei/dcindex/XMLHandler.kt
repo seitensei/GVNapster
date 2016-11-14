@@ -41,6 +41,7 @@ class XMLHandler(file: File){
         } catch (e: Exception) {
             Logger.log("--- Unable to Parse ---")
             Logger.log(e.stackTrace.toString())
+            e.printStackTrace()
         }
     }
 
@@ -63,6 +64,7 @@ class XMLHandler(file: File){
         } catch (e: Exception) {
             Logger.log("--- Unable to Parse ---")
             Logger.log(e.stackTrace.toString())
+            e.printStackTrace()
         }
     }
 
@@ -99,6 +101,7 @@ class XMLHandler(file: File){
             } catch (e: Exception) {
                 Logger.log("--- Unable to Parse ---")
                 Logger.log(e.stackTrace.toString())
+                e.printStackTrace()
             }
     }
 
