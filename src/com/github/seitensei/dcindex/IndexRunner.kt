@@ -20,6 +20,7 @@ class IndexRunner(conn: Socket): Runnable {
         var outStream: BufferedWriter = BufferedWriter(OutputStreamWriter(sock.outputStream))
         var inStream: BufferedReader = BufferedReader(InputStreamReader(sock.inputStream))
 
+        System.out.println("Connection from ${sock.inetAddress.hostName}")
         while(true) {
             Logger.log("Sending connection readiness to client.")
             writeToClient("Line ready.", outStream)
@@ -79,12 +80,16 @@ class IndexRunner(conn: Socket): Runnable {
                         var message: String = "${term.peer_conn},${term.peer_ip},${term.file_name}"
                         writeToClient(message, outStream)
                     }
+                    searchList = ArrayList<ResultEntity>()
+                    resultsList = ArrayList<ResultEntity>()
+
                 }
 
             }
             if(parsed == "QUIT") {
                 var user = tokenizer.nextToken()
                 var userip = tokenizer.nextToken()
+                System.out.println("$user has quit.")
                 Logger.log("$user@$userip has quit.")
                 DataHandler.dropFiles(user, userip)
                 DataHandler.delPeer(user, userip)
